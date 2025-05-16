@@ -1,0 +1,5 @@
+theme: jekyll-theme-cayman
+title: 'Synthetic Data for Computer Vision'
+
+github:
+  is_project_page: false
