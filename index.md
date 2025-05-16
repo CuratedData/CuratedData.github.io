@@ -2,14 +2,14 @@
 layout: default
 title: Curated Data for Efficient Learning - ICCV 2025
 buttons:
-  Overview: './cdel2025.html'
-  Invited Speakers: './cdel2025.html#invited-speakers'
-  Schedule: './cdel2025.html#schedule'
-  Call for Papers: './cdel2025.html#call-for-papers'
-  Important Dates: './cdel2025.html#important-workshop-dates'
-  Related Workshops: './cdel2025.html#related-workshops'
-  Organizers: './cdel2025.html#organizers'
-  Program Committee: './cdel2025.html#program-committee'
+  Overview: './index.html'
+  Invited Speakers: './index.html#invited-speakers'
+  Schedule: './index.html#schedule'
+  Call for Papers: './index.html#call-for-papers'
+  Important Dates: './index.html#important-workshop-dates'
+  Related Workshops: './index.html#related-workshops'
+  Organizers: './index.html#organizers'
+  Program Committee: './index.html#program-committee'
 
 description:
   - ICCV 2025 Workshop
