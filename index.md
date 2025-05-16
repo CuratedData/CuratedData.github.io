@@ -9,6 +9,7 @@ buttons:
   Important Dates: './cdel2025.html#important-workshop-dates'
   Related Workshops: './cdel2025.html#related-workshops'
   Organizers: './cdel2025.html#organizers'
+  Program Committee: './cdel2025.html#program-committee'
 
 description:
   - ICCV 2025 Workshop
@@ -114,6 +115,9 @@ We welcome submissions on:
 # Related Workshops
 - [Dataset Distillation Challenge @ ECCV 2024](https://eccv2024.org/)
 - [Data-centric AI @ NeurIPS 2023](https://neurips.cc/Conferences/2023/)
+
+
+# Organizers
 
 <div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
   <div style="width:45%; margin: 1%;">
