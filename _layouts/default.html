@@ -17,7 +17,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   <!-- add navigation bar -->
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
 
   <head>
@@ -113,12 +113,12 @@
   
   /* Style for the ICCV logo to float on top of background */
   .iccv-logo {
-    max-width: 300px;
+    max-width: 400px; /* Increased from 300px to 400px */
     height: auto;
     display: block;
-    margin: 0 auto;
-    position: relative; /* This helps ensure it's on top of the background */
-    z-index: 2; /* Higher z-index to appear above background */
+    margin: 30px auto 0; /* Added top margin of 30px to move it down */
+    position: relative;
+    z-index: 2;
   }
   
   /* Add some text shadow to help visibility against variable backgrounds */
@@ -126,6 +126,11 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 2;
+  }
+  
+  /* Adjust spacing for the logo container */
+  .project-tagline {
+    margin-top: 20px; /* Added additional top margin to move everything down */
   }
   </style>
     <section class="page-header page-header1">
