@@ -66,7 +66,7 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
       <img alt="Zhuang Liu" src="pics/speakers/zhuang_liu.png" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
     <a href="https://liuzhuang13.github.io/">Zhuang Liu</a><br>
-    Meta AI Research
+    Princeton University
   </div>
 </div>
 
