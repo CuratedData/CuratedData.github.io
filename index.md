@@ -122,7 +122,7 @@ We welcome submissions on:
       <img alt="George Cazenavette" src="pics/organizers/george_cazenavette.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
     <a href="https://georgecazenavette.github.io/">George Cazenavette</a><br>
-    MIT
+    Massachusetts Institute of Technology
   </div>
 
   <div style="width:45%; margin: 1%;">
@@ -154,7 +154,7 @@ We welcome submissions on:
       <img alt="Tongzhou Wang" src="pics/organizers/tongzhou_wang.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
     <a href="https://tongzhouwang.info/">Tongzhou Wang</a><br>
-    MIT
+    Massachusetts Institute of Technology
   </div>
 
   <div style="width:45%; margin: 1%;">
