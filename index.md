@@ -10,11 +10,7 @@ buttons:
   Related Workshops: './index.html#related-workshops'
   Organizers: './index.html#organizers'
   Program Committee: './index.html#program-committee'
-
-# description:
-#   - ICCV 2025 Workshop
-#   - October, 2025
-#   - Hawaii, Italy
+# we use the iccv logo here
 description: []
 ---
 
