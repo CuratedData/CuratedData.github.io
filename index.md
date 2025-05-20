@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Curated Data for Efficient Learning - ICCV 2025
+title: Curated Data for Efficient Learning
 buttons:
   Overview: './index.html'
   Invited Speakers: './index.html#invited-speakers'
