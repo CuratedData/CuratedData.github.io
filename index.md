@@ -134,16 +134,14 @@ Some potential topics include:
 - **Future directions:** What problems in data-centric AI can we expect in the near future?
 
 **Submission Details:**<br>
-We accept submissions of both long conference-style papers (8 pages) and short extended abstracts (4 pages).
-<br>
-<br>
+We accept submissions of both long conference-style papers (8 pages) and short extended abstracts (4 pages). 
 Authors of accepted long papers have the _option_ of having their work published in the ICCV workshop proceedings if they do not violate dual-submission guidelines. 
 <br>
 <br>
 We also welcome submissions of work currently in submission or recently accepted to other venues, but these will not be published in the workshop proceedings (but may still be presented at our workshop). 
 <br>
 <br>
-We will share links to all accepted paper on the workshop webpage. 
+Please sign up [here](https://docs.google.com/forms/d/e/1FAIpQLScLDrqtEKdd4TqS3sfQ2MLbtBU_IRZOysw-r_LHQ7-TVaABBg/viewform?usp=dialog) if you'd like to volunteer as a reviewer. 
 
 [//]: # (- Full papers: 8 pages &#40;excluding references&#41;)
 
