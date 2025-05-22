@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Curated Data for Efficient Learning - ICCV 2025
+title: Curated Data for Efficient Learning
 buttons:
   Overview: './index.html'
   Invited Speakers: './index.html#invited-speakers'
@@ -9,12 +9,8 @@ buttons:
   Important Dates: './index.html#important-workshop-dates'
   Related Workshops: './index.html#related-workshops'
   Organizers: './index.html#organizers'
-  Program Committee: './index.html#program-committee'
-
-# description:
-#   - ICCV 2025 Workshop
-#   - October, 2025
-#   - Hawaii, Italy
+#  Program Committee: './index.html#program-committee'
+# we use the iccv logo here
 description: []
 ---
 
@@ -70,7 +66,7 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
       <img alt="Zhuang Liu" src="pics/speakers/zhuang_liu.png" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
     <a href="https://liuzhuang13.github.io/">Zhuang Liu</a><br>
-    Meta AI Research
+    Princeton University
   </div>
 </div>
 
@@ -126,7 +122,7 @@ We welcome submissions on:
       <img alt="George Cazenavette" src="pics/organizers/george_cazenavette.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
     <a href="https://georgecazenavette.github.io/">George Cazenavette</a><br>
-    MIT
+    Massachusetts Institute of Technology
   </div>
 
   <div style="width:45%; margin: 1%;">
@@ -158,7 +154,7 @@ We welcome submissions on:
       <img alt="Tongzhou Wang" src="pics/organizers/tongzhou_wang.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
     <a href="https://tongzhouwang.info/">Tongzhou Wang</a><br>
-    MIT
+    Massachusetts Institute of Technology
   </div>
 
   <div style="width:45%; margin: 1%;">
@@ -202,44 +198,84 @@ We welcome submissions on:
   </div>
 </div>
 
-# Program Committee
-<ul>
-  <li>Manel Baradad (MIT)</li>
-  <li>George Cazenavette (MIT)</li>
-  <li>David Charatan (MIT)</li>
-  <li>Xuxi Chen (UT Austin)</li>
-  <li>Justil Cui (UCLA)</li>
-  <li>Ziyao Guo (NUS)</li>
-  <li>Yidi Jiang (NUS)</li>
-  <li>Jang-Hyun Kim (SNU)</li>
-  <li>Jinuk Kim (SNU)</li>
-  <li>Qi Li (MS Student, NUS)</li>
-  <li>Shiye Li (U of Sydney)</li>
-  <li>Guang Li (Hokkaido U)</li>
-  <li>Shikun Li (CAS)</li>
-  <li>Yanqing Liu (UCSC)</li>
-  <li>Jiawei Liu (NUS)</li>
-  <li>Songhua Liu (NUS)</li>
-  <li>Wei-Chiu Ma (Cornell)</li>
-  <li>Brian Moser (University of Kaiserslautern)</li>
-  <li>Adrian Munoz (MIT)</li>
-  <li>Federico Raue (University of Kaiserslautern)</li>
-  <li>Yuzhang Shang (Illinois Tech)</li>
-  <li>Qin Shi (Purdue University)</li>
-  <li>Seungjae Shin (KAIST)</li>
-  <li>Jake Touchet (Louisiana Tech University)</li>
-  <li>Haonan Wang (NUS)</li>
-  <li>Kai Wang (NUS)</li>
-  <li>Tongzhou Wang (MIT)</li>
-  <li>Xindi Wu (Princeton)</li>
-  <li>William Yang (Princeton)</li>
-  <li>Yue Xu (SJTU)</li>
-  <li>Yuchen Zhang (UESTC)</li>
-  <li>Tianle Zhang (UESTC)</li>
-  <li>Junhao Zhang (NUS)</li>
-  <li>Jie Zhang (ETH Zurich)</li>
-  <li>Bo Zhao (BAAI)</li>
-  <li>Wangbo Zhao (NUS)</li>
-  <li>Zekai Li (NUS)</li>
-  <li>Peihao Wang (UT Austin)</li>
-</ul>
+[//]: # (# Program Committee)
+
+[//]: # (<ul>)
+
+[//]: # (  <li>Manel Baradad &#40;MIT&#41;</li>)
+
+[//]: # (  <li>George Cazenavette &#40;MIT&#41;</li>)
+
+[//]: # (  <li>David Charatan &#40;MIT&#41;</li>)
+
+[//]: # (  <li>Xuxi Chen &#40;UT Austin&#41;</li>)
+
+[//]: # (  <li>Justil Cui &#40;UCLA&#41;</li>)
+
+[//]: # (  <li>Ziyao Guo &#40;NUS&#41;</li>)
+
+[//]: # (  <li>Yidi Jiang &#40;NUS&#41;</li>)
+
+[//]: # (  <li>Jang-Hyun Kim &#40;SNU&#41;</li>)
+
+[//]: # (  <li>Jinuk Kim &#40;SNU&#41;</li>)
+
+[//]: # (  <li>Qi Li &#40;MS Student, NUS&#41;</li>)
+
+[//]: # (  <li>Shiye Li &#40;U of Sydney&#41;</li>)
+
+[//]: # (  <li>Guang Li &#40;Hokkaido U&#41;</li>)
+
+[//]: # (  <li>Shikun Li &#40;CAS&#41;</li>)
+
+[//]: # (  <li>Yanqing Liu &#40;UCSC&#41;</li>)
+
+[//]: # (  <li>Jiawei Liu &#40;NUS&#41;</li>)
+
+[//]: # (  <li>Songhua Liu &#40;NUS&#41;</li>)
+
+[//]: # (  <li>Wei-Chiu Ma &#40;Cornell&#41;</li>)
+
+[//]: # (  <li>Brian Moser &#40;University of Kaiserslautern&#41;</li>)
+
+[//]: # (  <li>Adrian Munoz &#40;MIT&#41;</li>)
+
+[//]: # (  <li>Federico Raue &#40;University of Kaiserslautern&#41;</li>)
+
+[//]: # (  <li>Yuzhang Shang &#40;Illinois Tech&#41;</li>)
+
+[//]: # (  <li>Qin Shi &#40;Purdue University&#41;</li>)
+
+[//]: # (  <li>Seungjae Shin &#40;KAIST&#41;</li>)
+
+[//]: # (  <li>Jake Touchet &#40;Louisiana Tech University&#41;</li>)
+
+[//]: # (  <li>Haonan Wang &#40;NUS&#41;</li>)
+
+[//]: # (  <li>Kai Wang &#40;NUS&#41;</li>)
+
+[//]: # (  <li>Tongzhou Wang &#40;MIT&#41;</li>)
+
+[//]: # (  <li>Xindi Wu &#40;Princeton&#41;</li>)
+
+[//]: # (  <li>William Yang &#40;Princeton&#41;</li>)
+
+[//]: # (  <li>Yue Xu &#40;SJTU&#41;</li>)
+
+[//]: # (  <li>Yuchen Zhang &#40;UESTC&#41;</li>)
+
+[//]: # (  <li>Tianle Zhang &#40;UESTC&#41;</li>)
+
+[//]: # (  <li>Junhao Zhang &#40;NUS&#41;</li>)
+
+[//]: # (  <li>Jie Zhang &#40;ETH Zurich&#41;</li>)
+
+[//]: # (  <li>Bo Zhao &#40;BAAI&#41;</li>)
+
+[//]: # (  <li>Wangbo Zhao &#40;NUS&#41;</li>)
+
+[//]: # (  <li>Zekai Li &#40;NUS&#41;</li>)
+
+[//]: # (  <li>Peihao Wang &#40;UT Austin&#41;</li>)
+
+[//]: # (</ul>)
