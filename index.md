@@ -12,7 +12,7 @@ buttons:
   Organizers: './index.html#organizers'
 #  Program Committee: './index.html#program-committee'
 # we use the iccv logo here
-description: []
+description: "The ICCV 2025 Workshop on Curated Data for Efficient Learning"
 ---
 
 <style> 
