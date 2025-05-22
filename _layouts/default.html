@@ -81,19 +81,19 @@
     } 
     
   .page-header1 {
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    padding-bottom: 1rem;
-    background-color: #ffffff;
-    position: relative; /* Add this for positioning context */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+  text-align: center;
 
-    {% if page.path contains 'cvpr2024.md' %}
-    background-image: url('pics/seattle_view.jpg');
-    {% elsif page.path contains 'index.md' %}
-    background-image: url('pics/hawaii.jpg');
-    {% endif %}
-  }
+  {% if page.path contains 'cvpr2024.md' %}
+  background-image: url('pics/seattle_view.jpg');
+  {% elsif page.path contains 'index.md' %}
+  background-image: url('pics/hawaii.jpg');
+  {% endif %}
+}
   
   .page-header2 {
     background-color: #ffffff;
@@ -101,26 +101,33 @@
   }
   
   .btn {
-    display: inline-block;
-    margin-bottom: 1rem;
-    color: rgba(0, 0, 0, 0.897);
-    background-color: rgba(0, 0, 0, 0.8);
-    border-color: rgba(0, 0, 0, 0.918);
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 0.3rem;
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-  }
+  display: inline-block;
+  padding: 10px 16px;
+  margin: 0.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
+  text-shadow: -0.1px -0.1px 0 #000000, 0.1px -0.1px 0 #000000, -0.1px 0.1px 0 #000000, 0.1px 0.1px 0 #000000;
+  max-width: 90vw;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+}
   
   /* Style for the ICCV logo to float on top of background */
   .iccv-logo {
-    max-width: 400px; /* Increased from 300px to 400px */
-    height: auto;
-    display: block;
-    margin: 60px auto 0; /* Added top margin of 30px to move it down */
-    position: relative;
-    z-index: 2;
-  }
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  margin: 20px auto 10px;
+}
   
   /* Add some text shadow to help visibility against variable backgrounds */
   .project-name, .project-tagline {
@@ -133,6 +140,28 @@
   .project-tagline {
     margin-top: 20px; /* Added additional top margin to move everything down */
   }
+  /* Mobile layout adjustments */
+@media (max-width: 600px) {
+  .btn {
+    display: block;
+    width: 100%;
+    max-width: 90vw;
+    margin: 0.3rem auto;
+    font-size: 1rem;
+  }
+
+  .iccv-logo {
+    width: 80%;
+  }
+
+  .project-name {
+    font-size: 1.75rem;
+  }
+
+  .project-tagline {
+    font-size: 1.2rem;
+  }
+}
   </style>
     <section class="page-header page-header1">
       <!-- <img alt="logo" src="pics/placehold-logo.svg" class = "logo" > -->

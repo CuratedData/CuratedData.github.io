@@ -19,8 +19,41 @@ description: []
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-width: 100%;
   width: 75%;
-} </style>
+}
+</style>
+
+<style>
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+}
+td {
+  padding: 6px 8px;
+  vertical-align: top;
+}
+</style>
+
+<style>
+@media (max-width: 600px) {
+  h1, h2, h3 {
+    font-size: 1.2em;
+  }
+
+  div {
+    padding: 0 10px;
+  }
+
+  .center {
+    width: 100%;
+  }
+}
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 # Overview
 <div style="text-align: left; max-width: 800px; margin: auto;">
@@ -28,8 +61,8 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
 </div>
 
 # Invited Speakers
-<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
-  <div style="width:45%; margin: 1%;">
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://web.mit.edu/torralba/www/">
       <img alt="Antonio Torralba" src="pics/speakers/antonio_torralba.jpg"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -37,7 +70,7 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
     Massachusetts Institute of Technology
   </div>
 
-  <div style="width:45%; margin: 1%;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://people.eecs.berkeley.edu/~efros/">
       <img alt="Alexei Efros" src="pics/speakers/alexei_efros.jpg"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -45,7 +78,7 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
     University of California, Berkeley
   </div>
 
-  <div style="width:45%; margin: 1%;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://www.cs.princeton.edu/~olgarus/">
       <img alt="Olga Russakovsky" src="pics/speakers/olga_russakovsky.jpeg"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -53,7 +86,7 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
     Princeton University
   </div>
 
-  <div style="width:45%; margin: 1%;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://beerys.github.io/">
       <img alt="Sara Beery" src="pics/speakers/sara_beery.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -61,7 +94,7 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
     Massachusetts Institute of Technology
   </div>
 
-  <div style="width:45%; margin: 1%;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://liuzhuang13.github.io/">
       <img alt="Zhuang Liu" src="pics/speakers/zhuang_liu.png" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -116,8 +149,8 @@ We welcome submissions on:
 
 # Organizers
 
-<div style="display: flex; flex-wrap: wrap; justify-content: space-around;">
-  <div style="width:45%; margin: 1%;">
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://georgecazenavette.github.io/">
       <img alt="George Cazenavette" src="pics/organizers/george_cazenavette.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -125,7 +158,7 @@ We welcome submissions on:
     Massachusetts Institute of Technology
   </div>
 
-  <div style="width:45%; margin: 1%;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://kaiwang960112.github.io/">
       <img alt="Kai Wang" src="pics/organizers/kai_wang.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -133,7 +166,7 @@ We welcome submissions on:
     National University of Singapore
   </div>
 
-  <div style="width:45%; margin: 1%;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://lizekai-richard.github.io/">
       <img alt="Zekai Li" src="pics/organizers/zekai_li.png" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -141,7 +174,7 @@ We welcome submissions on:
     National University of Singapore
   </div>
 
-  <div style="width:45%; margin: 1%;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://xindiwu.github.io/">
       <img alt="Xindi Wu" src="pics/organizers/xindi_wu.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -149,7 +182,7 @@ We welcome submissions on:
     Princeton University
   </div>
 
-  <div style="width:45%; margin: 1%;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://tongzhouwang.info/">
       <img alt="Tongzhou Wang" src="pics/organizers/tongzhou_wang.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -157,7 +190,7 @@ We welcome submissions on:
     Massachusetts Institute of Technology
   </div>
 
-  <div style="width:45%; margin: 1%;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://peihaowang.github.io/">
       <img alt="Peihao Wang" src="pics/organizers/peihao_wang.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -165,7 +198,7 @@ We welcome submissions on:
     University of Texas at Austin
   </div>
 
-  <div style="width:45%; margin: 1%;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://ruihangao.github.io/">
       <img alt="Ruihan Gao" src="pics/organizers/ruihan_gao.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -173,7 +206,7 @@ We welcome submissions on:
     Carnegie Mellon University
   </div>
 
-  <div style="width:45%; margin: 1%;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://scholar.google.com.hk/citations?user=R3_AR5EAAAAJ">
       <img alt="Bo Zhao" src="pics/organizers/bo_zhao.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -181,7 +214,7 @@ We welcome submissions on:
     Shanghai Jiao Tong University
   </div>
 
-  <div style="width:45%; margin: 1%;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://vita-group.github.io/research.html">
       <img alt="Zhangyang Wang" src="pics/organizers/zhangyang_wang.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
@@ -189,7 +222,7 @@ We welcome submissions on:
     University of Texas at Austin
   </div>
 
-  <div style="width:45%; margin: 1%;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
     <a href="https://www.cs.cmu.edu/~junyanz/">
       <img alt="Jun-Yan Zhu" src="pics/organizers/junyan_zhu.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
