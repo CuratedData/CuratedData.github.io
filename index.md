@@ -6,7 +6,8 @@ buttons:
   Invited Speakers: './index.html#invited-speakers'
   Schedule: './index.html#schedule'
   Call for Papers: './index.html#call-for-papers'
-  Important Dates: './index.html#important-workshop-dates'
+#  Important Dates: './index.html#important-workshop-dates'
+  Deadlines: './index.html#deadlines'
   Related Workshops: './index.html#related-workshops'
   Organizers: './index.html#organizers'
 #  Program Committee: './index.html#program-committee'
@@ -123,24 +124,45 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
 </table>
 
 # Call for Papers
-We welcome submissions on:
-- **Data Pruning:** How can we best eliminate redundant or low-quality samples from large datasets?
-- **Synthetic Data:** How can we use generative models to augment existing datasets?
+We welcome submissions on all topics related to the curation of training data.<br>
+Some potential topics include:
+- **Data Pruning:** How can we eliminate redundant or low-quality samples from large datasets?
+- **Synthetic Data:** How can we use generative models to create or augment datasets?
 - **Dataset Distillation:** How can we learn tiny datasets of highly-efficient synthetic samples?
 - **Obscure Domains:** How can we train models in areas where existing data is extremely scarce?
-- **Scaling Laws:** How does the quality of training samples affect performance scaling?
+<!-- - **Scaling Laws:** How does the quality of training samples affect performance scaling?-->
 - **Future directions:** What problems in data-centric AI can we expect in the near future?
 
-**Submission Details:**
-- Full papers: 8 pages (excluding references)
-- Short papers: 4 pages (excluding references)
-- Submission site: [OpenReview link coming soon]
+**Submission Details:**<br>
+We accept submissions of both long conference-style papers (8 pages) and short extended abstracts (4 pages).
+<br>
+<br>
+Authors of accepted long papers have the _option_ of having their work published in the ICCV workshop proceedings if they do not violate dual-submission guidelines. 
+<br>
+<br>
+We also welcome submissions of work currently in submission or recently accepted to other venues, but these will not be published in the workshop proceedings (but may still be presented at our workshop). 
+<br>
+<br>
+We will share links to all accepted paper on the workshop webpage. 
 
-# Important workshop dates
-- Submission deadline: August 15, 2025
+[//]: # (- Full papers: 8 pages &#40;excluding references&#41;)
+
+[//]: # (- Short papers: 4 pages &#40;excluding references&#41;)
+
+[//]: # (- Submission site: [OpenReview link coming soon])
+
+# Deadlines
+**To be published in the proceedings:**
+- Submission deadline: July 7, 2025
+- Notification: July 11, 2025
+- Camera-ready: August 15, 2025
+
+**All other submissions:**
+- Submission deadline: August 29, 2025
 - Notification: September 5, 2025
-- Camera-ready: September 15, 2025
-- Workshop: October 18, 2025
+- Camera-ready: September 12, 2025
+
+Please contact George ([gcaz@mit.edu](mailto:gcaz@mit.edu)) with any questions.
 
 # Related Workshops
 - [Dataset Distillation Challenge @ ECCV 2024](https://eccv2024.org/)
