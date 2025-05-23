@@ -75,7 +75,7 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
     <a href="https://people.eecs.berkeley.edu/~efros/">
       <img alt="Alyosha Efros" src="pics/speakers/alexei_efros.jpg"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
-    <a href="https://people.eecs.berkeley.edu/~efros/">Alexei Efros</a><br>
+    <a href="https://people.eecs.berkeley.edu/~efros/">Alyosha Efros</a><br>
     University of California, Berkeley
   </div>
 
