@@ -112,7 +112,7 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
 <table>
 <tr><td>08:30 – 08:55</td><td>Welcome & Coffee</td></tr>
 <tr><td>09:00 – 09:35</td><td>Invited Talk: Antonio Torralba</td></tr>
-<tr><td>09:35 – 10:10</td><td>Invited Talk: Alexei Efros</td></tr>
+<tr><td>09:35 – 10:10</td><td>Invited Talk: Alyosha Efros</td></tr>
 <tr><td>10:10 – 10:45</td><td>Oral Presentations I</td></tr>
 <tr><td>10:50 – 12:00</td><td>Poster Session</td></tr>
 <tr><td>12:00 – 13:25</td><td>Lunch Break</td></tr>
@@ -131,7 +131,7 @@ Some potential topics include:
 - **Dataset Distillation:** How can we learn tiny datasets of highly-efficient synthetic samples?
 - **Obscure Domains:** How can we train models in areas where existing data is extremely scarce?
 <!-- - **Scaling Laws:** How does the quality of training samples affect performance scaling?-->
-- **Future directions:** What problems in data-centric AI can we expect in the near future?
+- **Future Directions:** What problems in data-centric AI can we expect in the near future?
 
 **Submission Details:**<br>
 We accept submissions of both long conference-style papers (8 pages) and short extended abstracts (4 pages). 
