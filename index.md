@@ -207,7 +207,7 @@ Please contact George ([gcaz@mit.edu](mailto:gcaz@mit.edu)) with any questions.
       <img alt="Tongzhou Wang" src="pics/organizers/tongzhou_wang.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
     <a href="https://tongzhouwang.info/">Tongzhou Wang</a><br>
-    Massachusetts Institute of Technology
+    OpenAI
   </div>
 
   <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
