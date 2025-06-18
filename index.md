@@ -124,6 +124,8 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
 </table>
 
 # Call for Papers
+**Submission Portal:** [OpenReview](https://openreview.net/group?id=thecvf.com/ICCV/2025/Workshop/CDEL)
+
 We welcome submissions on all topics related to the curation of training data.<br>
 Some potential topics include:
 - **Data Pruning:** How can we eliminate redundant or low-quality samples from large datasets?
@@ -141,7 +143,7 @@ Authors of accepted long papers have the _option_ of having their work published
 We also welcome submissions of work currently in submission or recently accepted to other venues, but these will not be published in the workshop proceedings (but may still be presented at our workshop). 
 <br>
 <br>
-Please sign up [here](https://docs.google.com/forms/d/e/1FAIpQLScLDrqtEKdd4TqS3sfQ2MLbtBU_IRZOysw-r_LHQ7-TVaABBg/viewform?usp=dialog) if you'd like to volunteer as a reviewer. 
+Please sign up [here](https://docs.google.com/forms/d/e/1FAIpQLScLDrqtEKdd4TqS3sfQ2MLbtBU_IRZOysw-r_LHQ7-TVaABBg/viewform?usp=dialog) if you'd like to volunteer as a reviewer.
 
 [//]: # (- Full papers: 8 pages &#40;excluding references&#41;)
 
