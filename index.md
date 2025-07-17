@@ -124,7 +124,11 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
 </table>
 
 # Call for Papers
-**Submission Portal:** [OpenReview](https://openreview.net/group?id=thecvf.com/ICCV/2025/Workshop/CDEL)
+~~**Archival Submission Portal:** [OpenReview](https://openreview.net/group?id=thecvf.com/ICCV/2025/Workshop/CDEL)~~
+
+**Non-Archival Submission Portal:** [OpenReview](https://openreview.net/group?id=thecvf.com/ICCV/2025/Workshop/CDEL_Non-Archival)
+
+
 
 We welcome submissions on all topics related to the curation of training data.<br>
 Some potential topics include:
@@ -152,15 +156,15 @@ Please sign up [here](https://docs.google.com/forms/d/e/1FAIpQLScLDrqtEKdd4TqS3s
 [//]: # (- Submission site: [OpenReview link coming soon])
 
 # Deadlines
-**To be published in the proceedings:**
+**Archival:**
 - Submission deadline: July 7, 2025
 - Notification: July 11, 2025
 - Camera-ready: August 15, 2025
 
-**All other submissions:**
+**Non-Archival:**
 - Submission deadline: August 29, 2025
-- Notification: September 5, 2025
-- Camera-ready: September 12, 2025
+- Notification: September 12, 2025
+- Camera-ready: September 19, 2025
 
 Please contact George ([gcaz@mit.edu](mailto:gcaz@mit.edu)) with any questions.
 
