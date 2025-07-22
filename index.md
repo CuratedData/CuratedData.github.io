@@ -105,7 +105,7 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
 </div>
 
 # Schedule
-- **Date:** October 18, 2025
+- **Date:** October 20, 2025
 - **Time:** 8:30 AM – 5:30 PM
 - **Location:** ICCV Workshop Venue (TBA)
 
