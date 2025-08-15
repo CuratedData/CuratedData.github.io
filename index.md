@@ -159,7 +159,7 @@ Please sign up [here](https://docs.google.com/forms/d/e/1FAIpQLScLDrqtEKdd4TqS3s
 **Archival:**
 - Submission deadline: July 7, 2025
 - Notification: July 11, 2025
-- Camera-ready: August 15, 2025
+- Camera-ready: August 18, 2025
 
 **Non-Archival:**
 - Submission deadline: August 29, 2025
@@ -338,3 +338,4 @@ Please contact George ([gcaz@mit.edu](mailto:gcaz@mit.edu)) with any questions.
 [//]: # (  <li>Peihao Wang &#40;UT Austin&#41;</li>)
 
 [//]: # (</ul>)
+
