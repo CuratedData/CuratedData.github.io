@@ -109,24 +109,12 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
 - **Time:** 8:30 AM – 5:30 PM
 - **Location:** ICCV Workshop Venue (TBA)
 
-<table>
-<tr><td>08:30 – 08:55</td><td>Welcome & Coffee</td></tr>
-<tr><td>09:00 – 09:35</td><td>Invited Talk: Antonio Torralba</td></tr>
-<tr><td>09:35 – 10:10</td><td>Invited Talk: Alyosha Efros</td></tr>
-<tr><td>10:10 – 10:45</td><td>Oral Presentations I</td></tr>
-<tr><td>10:50 – 12:00</td><td>Poster Session</td></tr>
-<tr><td>12:00 – 13:25</td><td>Lunch Break</td></tr>
-<tr><td>13:30 – 14:25</td><td>Invited Talk: Olga Russakovsky</td></tr>
-<tr><td>14:30 – 15:05</td><td>Invited Talk: Sara Beery</td></tr>
-<tr><td>15:05 – 15:40</td><td>Invited Talk: Zhuang Liu</td></tr>
-<tr><td>15:40 – 16:25</td><td>Oral Presentations II</td></tr>
-<tr><td>16:30 – 17:00</td><td>Panel Discussion & Closing</td></tr>
-</table>
+Full schedule coming soon!
 
 # Call for Papers
 ~~**Archival Submission Portal:** [OpenReview](https://openreview.net/group?id=thecvf.com/ICCV/2025/Workshop/CDEL)~~
 
-**Non-Archival Submission Portal:** [OpenReview](https://openreview.net/group?id=thecvf.com/ICCV/2025/Workshop/CDEL_Non-Archival)
+~~**Non-Archival Submission Portal:** [OpenReview](https://openreview.net/group?id=thecvf.com/ICCV/2025/Workshop/CDEL_Non-Archival)~~
 
 
 
@@ -338,4 +326,5 @@ Please contact George ([gcaz@mit.edu](mailto:gcaz@mit.edu)) with any questions.
 [//]: # (  <li>Peihao Wang &#40;UT Austin&#41;</li>)
 
 [//]: # (</ul>)
+
 
