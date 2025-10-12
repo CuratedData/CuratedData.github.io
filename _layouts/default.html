@@ -35,14 +35,14 @@
     <meta name="theme-color" content="#39275B">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-  
+
   <!-- add navigation bar -->
   <!--  <nav>
     <ul>
       <li><a href="/">ICCV 2025 Workshop</a></li>
       <li><a href="/cvpr2024.html">CVPR 2024 Workshop (Previous)</a></li>
     </ul>
-  </nav> --> 
+  </nav> -->
 
   <style>
     nav ul {
@@ -71,15 +71,15 @@
   </style>
   </head>
   <body>
-  <style> 
+  <style>
     .logo {
       display: block;
       margin-left: auto;
       margin-right: auto;
       width: 50%;
-      background-color: #000000; 
-    } 
-    
+      background-color: #000000;
+    }
+
   .page-header1 {
   background-repeat: no-repeat;
   background-size: cover;
@@ -88,18 +88,15 @@
   background-color: #ffffff;
   text-align: center;
 
-  {% if page.path contains 'cvpr2024.md' %}
-  background-image: url('pics/seattle_view.jpg');
-  {% elsif page.path contains 'index.md' %}
+
   background-image: url('pics/hawaii.jpg');
-  {% endif %}
 }
-  
+
   .page-header2 {
     background-color: #ffffff;
     background-image: linear-gradient(120deg, #ffffff, #ffffff);
   }
-  
+
   .btn {
   display: inline-block;
   padding: 10px 16px;
@@ -120,7 +117,7 @@
 .btn:hover {
   background-color: rgba(0, 0, 0, 0.85);
 }
-  
+
   /* Style for the ICCV logo to float on top of background */
   .iccv-logo {
   max-width: 100%;
@@ -128,14 +125,14 @@
   height: auto;
   margin: 20px auto 10px;
 }
-  
+
   /* Add some text shadow to help visibility against variable backgrounds */
   .project-name, .project-tagline {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 2;
   }
-  
+
   /* Adjust spacing for the logo container */
   .project-tagline {
     margin-top: 20px; /* Added additional top margin to move everything down */
@@ -180,18 +177,18 @@
       <br>
       <br>
        {% for link in page.buttons %}
-       
+
     <a href="{{ link[1] }}" class="btn" style="color:#ffffff ; font-size: large; text-shadow: -0.1px -0.1px 0 #000000, 0.1px -0.1px 0 #000000, -0.1px 0.1px 0 #000000, 0.1px 0.1px 0 #000000;">{{ link[0] }}</a>
   {% endfor %}
 
     </section>
-    
-   
+
+
     <section class="main-content">
       {{ content }}
 
       <footer class="site-footer">
-       
+
       </footer>
     </section>
 

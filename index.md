@@ -4,7 +4,7 @@ title: Curated Data for Efficient Learning
 buttons:
   Overview: './index.html'
   Invited Speakers: './index.html#invited-speakers'
-  Schedule: './index.html#schedule'
+  Schedule: './schedule.html'
   Call for Papers: './index.html#call-for-papers'
 #  Important Dates: './index.html#important-workshop-dates'
   Deadlines: './index.html#deadlines'
@@ -64,10 +64,10 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
 # Invited Speakers
 <div style="display: flex; flex-wrap: wrap; justify-content: center;">
   <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
-    <a href="https://web.mit.edu/torralba/www/">
-      <img alt="Antonio Torralba" src="pics/speakers/antonio_torralba.jpg"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
+    <a href="https://web.mit.edu/phillipi/">
+      <img alt="Phillip Isola" src="pics/speakers/phillip_isola.jpg"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
-    <a href="https://web.mit.edu/torralba/www/">Antonio Torralba</a><br>
+    <a href="https://web.mit.edu/phillipi/">Phillip Isola</a><br>
     Massachusetts Institute of Technology
   </div>
 
@@ -80,11 +80,11 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
   </div>
 
   <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
-    <a href="https://www.cs.princeton.edu/~olgarus/">
-      <img alt="Olga Russakovsky" src="pics/speakers/olga_russakovsky.jpeg"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
+    <a href="https://andrewowens.com/">
+      <img alt="Andrew Owens" src="pics/speakers/andrew_owens.jpg"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
-    <a href="https://www.cs.princeton.edu/~olgarus/">Olga Russakovsky</a><br>
-    Princeton University
+    <a href="https://andrewowens.com/">Andrew Owens</a><br>
+    Cornell Tech
   </div>
 
   <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
@@ -107,9 +107,9 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
 # Schedule
 - **Date:** October 20, 2025
 - **Time:** 8:30 AM – 5:30 PM
-- **Location:** ICCV Workshop Venue (TBA)
+- **Location:** Room 304-A
 
-Full schedule coming soon!
+Click [here](./schedule.html) for full schedule!
 
 # Call for Papers
 ~~**Archival Submission Portal:** [OpenReview](https://openreview.net/group?id=thecvf.com/ICCV/2025/Workshop/CDEL)~~
