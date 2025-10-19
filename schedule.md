@@ -146,7 +146,7 @@ td {
     <div class="schedule-time">11:00 AM – 12:00 PM</div>
     <div class="schedule-event">
       <h4>Poster Session</h4>
-      <p>ExHall II</p>
+      <p>Exhibit Hall II, Boards 231-264</p>
     </div>
   </div>
 
@@ -194,7 +194,7 @@ td {
   <div class="schedule-item">
     <div class="schedule-time">4:30 – 5:15 PM</div>
     <div class="schedule-event">
-      <h4>Invited Speaker: Alyosha Efros</h4>
+      <h4>TBD</h4>
     </div>
   </div>
 </div>
