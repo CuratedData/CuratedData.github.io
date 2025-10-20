@@ -194,7 +194,7 @@ td {
   <div class="schedule-item">
     <div class="schedule-time">4:30 – 5:15 PM</div>
     <div class="schedule-event">
-      <h4>TBD</h4>
+      <h4>Invited Speaker: Wei-Chiu Ma</h4>
     </div>
   </div>
 </div>
