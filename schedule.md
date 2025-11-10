@@ -9,6 +9,7 @@ buttons:
   Deadlines: './index.html#deadlines'
   Related Workshops: './index.html#related-workshops'
   Organizers: './index.html#organizers'
+  Accepted Papers: './papers.html'
 description: "The ICCV 2025 Workshop on Curated Data for Efficient Learning"
 ---
 

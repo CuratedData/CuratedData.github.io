@@ -10,6 +10,7 @@ buttons:
   Deadlines: './index.html#deadlines'
   Related Workshops: './index.html#related-workshops'
   Organizers: './index.html#organizers'
+  Accepted Papers: './papers.html'
 #  Program Committee: './index.html#program-committee'
 # we use the iccv logo here
 description: "The ICCV 2025 Workshop on Curated Data for Efficient Learning"
