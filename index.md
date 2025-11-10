@@ -65,27 +65,12 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
 # Invited Speakers
 <div style="display: flex; flex-wrap: wrap; justify-content: center;">
   <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
-    <a href="https://web.mit.edu/phillipi/">
-      <img alt="Phillip Isola" src="pics/speakers/phillip_isola.jpg"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
+    <a href="https://liuzhuang13.github.io/">
+      <img alt="Zhuang Liu" src="pics/speakers/zhuang_liu.png" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
-    <a href="https://web.mit.edu/phillipi/">Phillip Isola</a><br>
-    Massachusetts Institute of Technology
-  </div>
-
-  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
-    <a href="https://people.eecs.berkeley.edu/~efros/">
-      <img alt="Alyosha Efros" src="pics/speakers/alexei_efros.jpg"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
-    </a><br>
-    <a href="https://people.eecs.berkeley.edu/~efros/">Alyosha Efros</a><br>
-    University of California, Berkeley
-  </div>
-
-  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
-    <a href="https://andrewowens.com/">
-      <img alt="Andrew Owens" src="pics/speakers/andrew_owens.jpg"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
-    </a><br>
-    <a href="https://andrewowens.com/">Andrew Owens</a><br>
-    Cornell Tech
+    <a href="https://liuzhuang13.github.io/">Zhuang Liu</a><br>
+    Princeton University<br>
+    <em style="font-size: 0.9em; color: #666;">8:30 – 9:15 AM</em>
   </div>
 
   <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
@@ -93,15 +78,35 @@ The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to ad
       <img alt="Sara Beery" src="pics/speakers/sara_beery.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
     <a href="https://beerys.github.io/">Sara Beery</a><br>
-    Massachusetts Institute of Technology
+    Massachusetts Institute of Technology<br>
+    <em style="font-size: 0.9em; color: #666;">10:00 – 10:45 AM</em>
   </div>
 
   <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
-    <a href="https://liuzhuang13.github.io/">
-      <img alt="Zhuang Liu" src="pics/speakers/zhuang_liu.png" height="200" width="200" style="border-radius: 50%; object-fit: cover;">
+    <a href="https://andrewowens.com/">
+      <img alt="Andrew Owens" src="pics/speakers/andrew_owens.jpg"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
     </a><br>
-    <a href="https://liuzhuang13.github.io/">Zhuang Liu</a><br>
-    Princeton University
+    <a href="https://andrewowens.com/">Andrew Owens</a><br>
+    Cornell Tech<br>
+    <em style="font-size: 0.9em; color: #666;">2:15 – 3:00 PM</em>
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://web.mit.edu/phillipi/">
+      <img alt="Phillip Isola" src="pics/speakers/phillip_isola.jpg"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
+    </a><br>
+    <a href="https://web.mit.edu/phillipi/">Phillip Isola</a><br>
+    Massachusetts Institute of Technology<br>
+    <em style="font-size: 0.9em; color: #666;">3:45 – 4:30 PM</em>
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://www.cs.cornell.edu/~weichiu/">
+      <img alt="Wei-Chiu Ma" src="pics/speakers/weichiu_ma.png"  height="200" width="200" style="border-radius: 50%; object-fit: cover;">
+    </a><br>
+    <a href="https://www.cs.cornell.edu/~weichiu/">Wei-Chiu Ma</a><br>
+    Cornell University<br>
+    <em style="font-size: 0.9em; color: #666;">4:30 – 5:15 PM</em>
   </div>
 </div>
 

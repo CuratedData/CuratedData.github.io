@@ -130,9 +130,12 @@ td {
     <div class="schedule-time">9:15 – 10:00 AM</div>
     <div class="schedule-event">
       <h4>Oral Session 1</h4>
-      <p>How to Train your Text-to-Image Model: Evaluating Design Choices for Synthetic Training Captions<br><br>
-      Generating Fine Details of Entity Interactions<br><br>
-      Role Bias in Text-to-Image Diffusion Models: Diagnosing and Mitigating Compositional Failures through Intermediate Decomposition</p>
+      <p><a href="https://arxiv.org/abs/2506.16679">How to Train your Text-to-Image Model: Evaluating Design Choices for Synthetic Training Captions</a><br>
+      <span style="font-size: 0.85em; color: #888;">Manuel Brack, Sudeep Katakol, Felix Friedrich, Patrick Schramowski, Hareesh Ravi, Kristian Kersting, Ajinkya Kale</span><br><br>
+      <a href="https://arxiv.org/abs/2504.08714">Generating Fine Details of Entity Interactions</a><br>
+      <span style="font-size: 0.85em; color: #888;">Xinyi Gu, Jiayuan Mao</span><br><br>
+      <a href="https://arxiv.org/abs/2503.10037">Role Bias in Text-to-Image Diffusion Models: Diagnosing and Mitigating Compositional Failures through Intermediate Decomposition</a><br>
+      <span style="font-size: 0.85em; color: #888;">Sina Malakouti, Adriana Kovashka</span></p>
     </div>
   </div>
 
@@ -147,7 +150,7 @@ td {
     <div class="schedule-time">11:00 AM – 12:00 PM</div>
     <div class="schedule-event">
       <h4>Poster Session</h4>
-      <p>ExHall II</p>
+      <p>Exhibit Hall II, Boards 231-264</p>
     </div>
   </div>
 
@@ -162,9 +165,12 @@ td {
     <div class="schedule-time">1:30 – 2:15 PM</div>
     <div class="schedule-event">
       <h4>Oral Session 2</h4>
-      <p>Synthetic Captions for Open-Vocabulary Zero-Shot Segmentation<br><br>
-      A CLIP-Powered Framework for Robust and Generalizable Data Selection<br><br>
-      VILA²: Towards VLM Augmentation via Self-Improvement</p>
+      <p><a href="https://arxiv.org/abs/2509.11840">Synthetic Captions for Open-Vocabulary Zero-Shot Segmentation</a><br>
+      <span style="font-size: 0.85em; color: #888;">Tim Lebailly, Vijay Veerabadran, Satwik Kottur, Karl Ridgeway, Michael Louis Iuzzolino</span><br><br>
+      <a href="https://arxiv.org/abs/2410.11215">A CLIP-Powered Framework for Robust and Generalizable Data Selection</a><br>
+      <span style="font-size: 0.85em; color: #888;">Suorong Yang, Peng Ye, Wanli Ouyang, Dongzhan Zhou, Furao Shen</span><br><br>
+      <a href="https://arxiv.org/abs/2407.17453">VILA²: Towards VLM Augmentation via Self-Improvement</a><br>
+      <span style="font-size: 0.85em; color: #888;">Yunhao Fang, Ligeng Zhu, Yao Lu, Yan Wang, Pavlo Molchanov, Jan Kautz, Jang Hyun Cho, Marco Pavone, Song Han, Hongxu Yin</span></p>
     </div>
   </div>
 
@@ -179,9 +185,12 @@ td {
     <div class="schedule-time">3:00 – 3:45 PM</div>
     <div class="schedule-event">
       <h4>Oral Session 3</h4>
-      <p>SYM3D: Canonicalizing Triplanes via Symmetry for Single-View 3D Learning<br><br>
-      Objaverse++: Curated 3D Object Dataset with Quality Annotations<br><br>
-      ControlTac: Force- and Position-Controlled Tactile Data Augmentation with a Single Reference Image</p>
+      <p><a href="https://arxiv.org/abs/2406.06432">SYM3D: Canonicalizing Triplanes via Symmetry for Single-View 3D Learning</a><br>
+      <span style="font-size: 0.85em; color: #888;">Jing Yang, Kyle Fogarty, Fangcheng Zhong, Cengiz Oztireli</span><br><br>
+      <a href="https://arxiv.org/abs/2504.07334">Objaverse++: Curated 3D Object Dataset with Quality Annotations</a><br>
+      <span style="font-size: 0.85em; color: #888;">Chendi Lin, Heshan Liu, Qunshu Lin, Zachary Bright, Shitao Tang, Yihui He, Minghao Liu, Ling Zhu, Cindy Le</span><br><br>
+      <a href="https://arxiv.org/abs/2505.20498">ControlTac: Force- and Position-Controlled Tactile Data Augmentation with a Single Reference Image</a><br>
+      <span style="font-size: 0.85em; color: #888;">Dongyu Luo, Kelin Yu, Amir-Hossein Shahidzadeh, Cornelia Fermüller, Yiannis Aloimonos, Ruohan Gao</span></p>
     </div>
   </div>
 
@@ -195,7 +204,7 @@ td {
   <div class="schedule-item">
     <div class="schedule-time">4:30 – 5:15 PM</div>
     <div class="schedule-event">
-      <h4>Invited Speaker: Alyosha Efros</h4>
+      <h4>Invited Speaker: Wei-Chiu Ma</h4>
     </div>
   </div>
 </div>
