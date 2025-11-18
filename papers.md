@@ -182,7 +182,7 @@ td {
 [PDF](/pdfs/luo.pdf) | [Project Page](https://dongyuluo.github.io/controltac/)
 
 ### RF PRIOR: Preserving Global-Context Priors for Efficient Instance Segmentation Transfer
-**Authors:** Jason K. Nam
+**Authors:** Jason K. Nam (Hongik University, ETRI)
 
 ### VILA$^2$: Towards VLM Augmentation via Self-Improvement
 **Authors:** Yunhao Fang (Nvidia), Ligeng Zhu (Nvidia), Yao Lu (Nvidia), Yan Wang (Nvidia), Pavlo Molchanov (Nvidia), Jan Kautz (Nvidia), Jang Hyun Cho (UT Austin), Marco Pavone (Nvidia), Song Han (Nvidia, MIT), Hongxu Yin (Nvidia)  
