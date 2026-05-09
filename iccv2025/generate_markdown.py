@@ -1,4 +1,5 @@
 import csv
+import re
 from collections import defaultdict
 
 
@@ -104,7 +105,27 @@ def format_paper(paper):
     if paper['arxiv']:
         links.append(f"[arXiv]({paper['arxiv']})")
     if paper['pdf_url']:
-        links.append(f"[PDF]({paper['pdf_url']})")
+        # Extract first author's last name
+        authors_str = paper['authors'].strip()
+
+        # Split by semicolon or comma
+        if ';' in authors_str:
+            first_author = authors_str.split(';')[0].strip()
+        elif ',' in authors_str:
+            first_author = authors_str.split(',')[0].strip()
+        else:
+            first_author = authors_str
+
+        # Remove affiliation in parentheses if present
+        if '(' in first_author:
+            first_author = first_author.split('(')[0].strip()
+
+        # Get the last word as the last name
+        name_parts = first_author.split()
+        if name_parts:
+            last_name = name_parts[-1].lower()
+            pdf_filename = f"{last_name}.pdf"
+            links.append(f"[PDF](/pdfs/{pdf_filename})")
     if paper['project_url']:
         links.append(f"[Project Page]({paper['project_url']})")
 

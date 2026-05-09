@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Curated Data for Efficient Learning — ECCV 2026 Workshop</title>
+<meta name="description" content="The ECCV 2026 Workshop on Curated Data for Efficient Learning (CDEL): data pruning, dataset distillation, synthetic data, and learning under data scarcity." />
+<meta property="og:title" content="Curated Data for Efficient Learning — ECCV 2026" />
+<meta property="og:description" content="ECCV 2026 Workshop on data curation for efficient machine learning." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://curateddata.github.io/" />
+<meta property="og:image" content="https://curateddata.github.io/assets/img/og-image.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Curated Data for Efficient Learning — ECCV 2026 workshop. A point-cloud constellation in coral and violet on a dark background." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Curated Data for Efficient Learning — ECCV 2026" />
+<meta name="twitter:description" content="ECCV 2026 Workshop on data curation for efficient machine learning." />
+<meta name="twitter:image" content="https://curateddata.github.io/assets/img/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script>
+  // Set theme as early as possible to avoid flash.
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var dark = saved ? saved === 'dark' : prefersDark;
+    if (dark) document.documentElement.classList.add('dark');
+  })();
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        },
+        colors: {
+          bg: 'rgb(var(--bg) / <alpha-value>)',
+          surface: 'rgb(var(--surface) / <alpha-value>)',
+          ink: 'rgb(var(--ink) / <alpha-value>)',
+          muted: 'rgb(var(--muted) / <alpha-value>)',
+          line: 'rgb(var(--line) / <alpha-value>)',
+          a1: 'rgb(var(--a1) / <alpha-value>)',
+          a2: 'rgb(var(--a2) / <alpha-value>)',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root {
+    --bg: 248 245 238;
+    --surface: 255 255 255;
+    --ink: 22 21 28;
+    --muted: 90 88 98;
+    --line: 216 211 200;
+    --a1: 227 80 47;
+    --a2: 58 47 124;
+  }
+  .dark {
+    --bg: 10 9 16;
+    --surface: 19 18 26;
+    --ink: 245 243 235;
+    --muted: 140 137 151;
+    --line: 34 32 44;
+    --a1: 255 111 77;
+    --a2: 159 134 255;
+  }
+
+  html, body { background: rgb(var(--bg)); color: rgb(var(--ink)); }
+  body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+  /* Hero canvas */
+  #particles {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    z-index: 0;
+  }
+
+  /* Subtle grain in dark mode for depth */
+  .grain::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+
+  .duotone-text {
+    background: linear-gradient(110deg, rgb(var(--a1)), rgb(var(--a2)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .ring-shadow {
+    box-shadow:
+      0 0 0 1px rgb(var(--line) / 1),
+      0 24px 48px -24px rgb(var(--ink) / 0.15);
+  }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgb(var(--muted));
+  }
+
+  .section-title {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-title {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    line-height: 0.95;
+  }
+
+  .pulse-dot {
+    display: inline-block;
+    width: 8px; height: 8px; border-radius: 9999px;
+    background: rgb(var(--a1));
+    box-shadow: 0 0 0 0 rgb(var(--a1) / 0.6);
+    animation: pulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgb(var(--a1) / 0.55); }
+    70%  { box-shadow: 0 0 0 14px rgb(var(--a1) / 0); }
+    100% { box-shadow: 0 0 0 0 rgb(var(--a1) / 0); }
+  }
+
+  /* Card hover elevation */
+  .topic-card {
+    position: relative;
+    transition: transform .35s cubic-bezier(.2,.7,.2,1), border-color .25s;
+  }
+  .topic-card:hover {
+    transform: translateY(-3px);
+    border-color: rgb(var(--a1));
+  }
+  .topic-card .num {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic;
+    font-size: 36px;
+    line-height: 1;
+    color: rgb(var(--a1));
+  }
+
+  /* Avatar w/ ring */
+  .avatar {
+    width: 96px; height: 96px; border-radius: 9999px; overflow: hidden;
+    background: rgb(var(--surface));
+    box-shadow: 0 0 0 1px rgb(var(--line)), 0 8px 24px -12px rgb(var(--ink) / 0.25);
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .avatar.placeholder {
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Instrument Serif', serif; font-size: 34px;
+    background: linear-gradient(135deg, rgb(var(--a1) / 0.18), rgb(var(--a2) / 0.18));
+    color: rgb(var(--ink));
+  }
+
+  /* Animated dotted divider */
+  .data-rule {
+    height: 1px;
+    background-image: radial-gradient(circle at 1px 50%, rgb(var(--line)) 1px, transparent 1.5px);
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+  }
+
+  /* Nav blur */
+  .nav-glass {
+    background: rgb(var(--bg) / 0.72);
+    backdrop-filter: saturate(140%) blur(12px);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+    border-bottom: 1px solid rgb(var(--line));
+  }
+
+  /* Reveal on view */
+  .reveal {
+    opacity: 0; transform: translateY(12px);
+    transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* Scroll cue */
+  .scroll-cue {
+    width: 1px; height: 56px;
+    background: linear-gradient(to bottom, transparent, rgb(var(--ink) / 0.5), transparent);
+    animation: cue 2.6s ease-in-out infinite;
+  }
+  @keyframes cue {
+    0%, 100% { transform: scaleY(0.6); transform-origin: top; opacity: 0.4; }
+    50%      { transform: scaleY(1);   transform-origin: top; opacity: 1; }
+  }
+
+  /* Hero gradient orbs (subtle) */
+  .orb {
+    position: absolute; border-radius: 9999px;
+    filter: blur(64px);
+    opacity: 0.45;
+    pointer-events: none;
+  }
+  .dark .orb { opacity: 0.55; }
+
+  /* Underline link */
+  .ul-link {
+    position: relative;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    transition: background-size .3s ease;
+  }
+  .ul-link:hover { background-size: 0 1px; }
+
+  /* Reduce motion */
+  @media (prefers-reduced-motion: reduce) {
+    .pulse-dot, .scroll-cue { animation: none; }
+  }
+</style>
+</head>
+
+<body class="bg-bg text-ink">
+
+<!-- Top nav -->
+<header class="fixed top-0 inset-x-0 z-40 nav-glass">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-3 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3 group">
+      <span class="relative inline-flex w-7 h-7 items-center justify-center">
+        <span class="absolute inset-0 rounded-full bg-a1/20 blur-[6px]"></span>
+        <span class="relative w-2 h-2 rounded-full bg-a1"></span>
+        <span class="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-a2"></span>
+        <span class="absolute bottom-0 left-0 w-1 h-1 rounded-full bg-ink/60"></span>
+      </span>
+      <span class="font-mono text-[11px] tracking-[0.18em] uppercase text-muted group-hover:text-ink transition-colors">CDEL · ECCV 26</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-7 text-sm">
+      <a href="#overview" class="text-muted hover:text-ink transition-colors">Overview</a>
+      <a href="#cfp" class="text-muted hover:text-ink transition-colors">Call for Papers</a>
+      <a href="#dates" class="text-muted hover:text-ink transition-colors">Dates</a>
+      <a href="#speakers" class="text-muted hover:text-ink transition-colors">Speakers</a>
+      <a href="#organizers" class="text-muted hover:text-ink transition-colors">Organizers</a>
+      <a href="iccv2025/" class="text-muted hover:text-ink transition-colors">ICCV&nbsp;2025 ↗</a>
+    </nav>
+
+    <button id="theme-toggle" aria-label="Toggle theme" class="relative inline-flex w-9 h-9 items-center justify-center rounded-full border border-line hover:border-ink/50 transition-colors">
+      <svg class="w-4 h-4 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/>
+      </svg>
+      <svg class="w-4 h-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section id="top" class="relative min-h-[100svh] grain overflow-hidden">
+  <canvas id="particles" aria-hidden="true"></canvas>
+
+  <div class="orb" style="top:-10%; left:-8%; width:520px; height:520px; background: radial-gradient(closest-side, rgb(var(--a1)), transparent 70%);"></div>
+  <div class="orb" style="bottom:-15%; right:-10%; width:620px; height:620px; background: radial-gradient(closest-side, rgb(var(--a2)), transparent 70%);"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 pt-32 pb-20 min-h-[100svh] flex flex-col justify-between">
+    <div>
+      <div class="flex items-center gap-3 mb-8">
+        <span class="pulse-dot"></span>
+        <span class="eyebrow">ECCV 2026 · Malmö, Sweden</span>
+      </div>
+
+      <h1 class="hero-title text-[15vw] sm:text-[10vw] md:text-[9.5vw] lg:text-[140px] max-w-[12ch]">
+        Curated <span class="italic text-a1">Data</span><br/>
+        for Efficient<br/>
+        <span class="italic duotone-text">Learning.</span>
+      </h1>
+
+      <p class="mt-8 max-w-xl text-base sm:text-lg text-muted leading-relaxed">
+        A workshop on the data side of scale — pruning, distillation, synthesis, and selection — at the
+        <a class="ul-link text-ink" href="https://eccv.ecva.net/" target="_blank" rel="noopener">European Conference on Computer Vision</a>,
+        Malmö, Sweden, September 2026.
+      </p>
+
+      <div class="mt-10 flex flex-wrap items-center gap-3">
+        <a href="#cfp" class="inline-flex items-center gap-2 rounded-full bg-ink text-bg px-5 py-2.5 text-sm font-medium hover:opacity-90 transition">
+          Read the Call for Papers
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#dates" class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm font-medium hover:border-ink/60 transition">
+          Important dates
+        </a>
+      </div>
+    </div>
+
+    <div class="hidden md:flex items-end justify-between mt-16 text-xs font-mono uppercase tracking-[0.18em] text-muted">
+      <div class="flex items-center gap-3">
+        <span class="scroll-cue inline-block"></span>
+        <span>Scroll</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#overview" class="hover:text-ink transition-colors">① Overview</a>
+        <a href="#cfp" class="hover:text-ink transition-colors">② CFP</a>
+        <a href="#dates" class="hover:text-ink transition-colors">③ Dates</a>
+        <a href="#speakers" class="hover:text-ink transition-colors">④ Speakers</a>
+        <a href="#organizers" class="hover:text-ink transition-colors">⑤ Organizers</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Overview -->
+<section id="overview" class="relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+      <div class="md:col-span-3">
+        <div class="eyebrow mb-3">01 / Overview</div>
+        <h2 class="section-title text-4xl sm:text-5xl">A workshop<br/>on data,<br/>not models.</h2>
+      </div>
+      <div class="md:col-span-9 md:pt-2">
+        <p class="reveal text-lg sm:text-xl leading-[1.55] text-ink/90 max-w-3xl">
+          The ECCV 2026 Workshop on <em class="font-serif italic">Curated Data for Efficient Learning</em> (CDEL) seeks to advance the
+          understanding and development of <span class="text-a1">data-centric</span> techniques that improve the efficiency of training large-scale machine
+          learning models. As model sizes continue to grow and data requirements scale accordingly, this workshop brings attention to the
+          increasingly critical role of <span class="text-a2">data quality, selection, and synthesis</span> in achieving high model performance with
+          reduced computational cost.
+        </p>
+        <p class="reveal mt-6 text-lg sm:text-xl leading-[1.55] text-muted max-w-3xl">
+          Rather than focusing on ever-larger datasets and models, CDEL emphasizes the curation and distillation of high-value data —
+          leveraging techniques such as dataset distillation, data pruning, synthetic data generation, and sampling optimization. These
+          approaches aim to reduce redundancy, improve generalization, and enable learning in data-scarce regimes.
+        </p>
+
+        <div class="reveal mt-12 grid grid-cols-2 sm:grid-cols-4 gap-px bg-line/70 border border-line">
+          <div class="bg-bg p-5">
+            <div class="font-serif text-3xl">8h</div>
+            <div class="eyebrow mt-1">Full-day workshop</div>
+          </div>
+          <div class="bg-bg p-5">
+            <div class="font-serif text-3xl">5+</div>
+            <div class="eyebrow mt-1">Invited speakers</div>
+          </div>
+          <div class="bg-bg p-5">
+            <div class="font-serif text-3xl">2</div>
+            <div class="eyebrow mt-1">Submission tracks</div>
+          </div>
+          <div class="bg-bg p-5">
+            <div class="font-serif text-3xl">∞</div>
+            <div class="eyebrow mt-1">Curated samples</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="data-rule max-w-7xl mx-auto"></div>
+</section>
+
+<!-- Call for Papers -->
+<section id="cfp" class="relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-12">
+      <div class="md:col-span-4">
+        <div class="eyebrow mb-3">02 / Call for Papers</div>
+        <h2 class="section-title text-4xl sm:text-5xl">What we'd<br/>like to read.</h2>
+      </div>
+      <div class="md:col-span-8 md:pt-2">
+        <p class="text-lg leading-[1.6] text-muted max-w-2xl">
+          We welcome submissions on all topics related to the curation of training data — across vision, language, and multimodal learning.
+          The submission portal will open on OpenReview when reviewing begins.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-2 text-xs font-mono uppercase tracking-[0.16em]">
+          <span class="px-3 py-1.5 rounded-full border border-line text-muted">8-page papers</span>
+          <span class="px-3 py-1.5 rounded-full border border-line text-muted">4-page extended abstracts</span>
+          <span class="px-3 py-1.5 rounded-full border border-line text-muted">Single deadline</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-line/70 border border-line">
+      <article class="topic-card bg-bg border border-transparent p-6 sm:p-8">
+        <div class="flex items-baseline justify-between">
+          <span class="num">01</span>
+          <span class="eyebrow">Topic</span>
+        </div>
+        <h3 class="mt-3 font-serif text-2xl">Data Pruning</h3>
+        <p class="mt-2 text-muted leading-relaxed">How can we eliminate redundant or low-quality samples from large datasets without losing what matters?</p>
+      </article>
+      <article class="topic-card bg-bg border border-transparent p-6 sm:p-8">
+        <div class="flex items-baseline justify-between">
+          <span class="num">02</span>
+          <span class="eyebrow">Topic</span>
+        </div>
+        <h3 class="mt-3 font-serif text-2xl">Synthetic Data</h3>
+        <p class="mt-2 text-muted leading-relaxed">How can we use generative models to create or augment datasets — and when does it pay off?</p>
+      </article>
+      <article class="topic-card bg-bg border border-transparent p-6 sm:p-8">
+        <div class="flex items-baseline justify-between">
+          <span class="num">03</span>
+          <span class="eyebrow">Topic</span>
+        </div>
+        <h3 class="mt-3 font-serif text-2xl">Dataset Distillation</h3>
+        <p class="mt-2 text-muted leading-relaxed">How can we learn tiny datasets of highly-efficient synthetic samples that match the training signal of much larger ones?</p>
+      </article>
+      <article class="topic-card bg-bg border border-transparent p-6 sm:p-8">
+        <div class="flex items-baseline justify-between">
+          <span class="num">04</span>
+          <span class="eyebrow">Topic</span>
+        </div>
+        <h3 class="mt-3 font-serif text-2xl">Obscure Domains</h3>
+        <p class="mt-2 text-muted leading-relaxed">How can we train models in areas where existing data is extremely scarce, sensitive, or hard to label?</p>
+      </article>
+      <article class="topic-card bg-bg border border-transparent p-6 sm:p-8">
+        <div class="flex items-baseline justify-between">
+          <span class="num">05</span>
+          <span class="eyebrow">Topic</span>
+        </div>
+        <h3 class="mt-3 font-serif text-2xl">Future Directions</h3>
+        <p class="mt-2 text-muted leading-relaxed">What problems in data-centric AI can we expect in the near future as model and data scales continue to grow?</p>
+      </article>
+      <article class="bg-bg border border-transparent p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <div class="eyebrow">Submission Details</div>
+          <p class="mt-3 text-base leading-relaxed">
+            Long papers (<strong>8 pp.</strong> excl. refs) and extended abstracts (<strong>4 pp.</strong> excl. refs),
+            on a single submission deadline. Long papers may opt into the ECCV workshop proceedings if dual-submission
+            rules permit. Cross-submissions of work currently in review or recently accepted elsewhere are also welcome
+            and may be presented at the workshop.
+          </p>
+        </div>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <a href="#" class="inline-flex items-center gap-2 text-sm font-medium ul-link text-ink">OpenReview portal — TBA</a>
+        </div>
+      </article>
+    </div>
+
+    <p class="mt-10 text-sm text-muted">
+      Want to volunteer as a reviewer? Sign up information will be posted here closer to the submission deadline.
+    </p>
+  </div>
+  <div class="data-rule max-w-7xl mx-auto"></div>
+</section>
+
+<!-- Important Dates -->
+<section id="dates" class="relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+      <div class="md:col-span-4">
+        <div class="eyebrow mb-3">03 / Important Dates</div>
+        <h2 class="section-title text-4xl sm:text-5xl">Mark your<br/>calendar.</h2>
+        <p class="mt-4 text-muted text-sm leading-relaxed max-w-sm">
+          Exact deadlines may shift to follow ECCV's workshop calendar.
+          <a href="https://groups.google.com/g/cdel-workshop-announce" target="_blank" rel="noopener" class="ul-link text-ink">Subscribe to announcements</a> for updates.
+        </p>
+        <a href="https://groups.google.com/g/cdel-workshop-announce" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm font-medium hover:border-ink/60 transition">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+          Subscribe to announcements
+        </a>
+      </div>
+      <div class="md:col-span-8">
+        <ol class="border border-line divide-y divide-line">
+          <li class="grid grid-cols-12 gap-4 p-5 sm:p-6 items-baseline">
+            <div class="col-span-3 sm:col-span-2 font-mono text-xs uppercase tracking-[0.16em] text-muted">Submit</div>
+            <div class="col-span-5 sm:col-span-6 font-serif text-xl">Submission deadline</div>
+            <div class="col-span-4 sm:col-span-4 text-right font-mono text-sm text-a1">July 29, 2026</div>
+          </li>
+          <li class="grid grid-cols-12 gap-4 p-5 sm:p-6 items-baseline">
+            <div class="col-span-3 sm:col-span-2 font-mono text-xs uppercase tracking-[0.16em] text-muted">Notify</div>
+            <div class="col-span-5 sm:col-span-6 font-serif text-xl">Author notifications</div>
+            <div class="col-span-4 sm:col-span-4 text-right font-mono text-sm text-muted">August 12, 2026</div>
+          </li>
+          <li class="grid grid-cols-12 gap-4 p-5 sm:p-6 items-baseline">
+            <div class="col-span-3 sm:col-span-2 font-mono text-xs uppercase tracking-[0.16em] text-muted">Final</div>
+            <div class="col-span-5 sm:col-span-6 font-serif text-xl">Camera-ready</div>
+            <div class="col-span-4 sm:col-span-4 text-right font-mono text-sm text-muted">August 15, 2026</div>
+          </li>
+          <li class="grid grid-cols-12 gap-4 p-5 sm:p-6 items-baseline bg-a1/5">
+            <div class="col-span-3 sm:col-span-2 font-mono text-xs uppercase tracking-[0.16em] text-a1">Event</div>
+            <div class="col-span-5 sm:col-span-6 font-serif text-xl">Workshop @ ECCV 2026 <span class="block text-sm font-sans text-muted normal-case tracking-normal mt-1">Malmö, Sweden</span></div>
+            <div class="col-span-4 sm:col-span-4 text-right font-mono text-sm">Sept 8 or 9, 2026 <span class="text-muted">(TBD)</span></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="data-rule max-w-7xl mx-auto"></div>
+</section>
+
+<!-- Speakers placeholder -->
+<section id="speakers" class="relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+      <div class="md:col-span-4">
+        <div class="eyebrow mb-3">04 / Invited Speakers</div>
+        <h2 class="section-title text-4xl sm:text-5xl">A line-up<br/>in progress.</h2>
+      </div>
+      <div class="md:col-span-8">
+        <div class="border border-line p-8 sm:p-12 relative overflow-hidden">
+          <div class="absolute -top-16 -right-16 w-72 h-72 rounded-full" style="background: radial-gradient(closest-side, rgb(var(--a2) / 0.18), transparent 70%);"></div>
+          <p class="text-2xl sm:text-3xl font-serif leading-tight max-w-2xl relative">
+            We're inviting a roster of researchers working at the frontier of data-centric ML — from dataset distillation
+            to synthetic data, from foundation-model training to domains where data is genuinely scarce.
+          </p>
+          <p class="mt-6 text-muted relative">Details will be announced as confirmations come in.</p>
+          <div class="mt-8 flex flex-wrap gap-2 text-xs font-mono uppercase tracking-[0.16em] relative">
+            <span class="px-3 py-1.5 rounded-full bg-a1/10 text-a1 border border-a1/30">Coming soon</span>
+            <a href="iccv2025/" class="px-3 py-1.5 rounded-full border border-line hover:border-ink/60 transition-colors text-muted">See last year's lineup ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="data-rule max-w-7xl mx-auto"></div>
+</section>
+
+<!-- Organizers -->
+<section id="organizers" class="relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 mb-14">
+      <div class="md:col-span-4">
+        <div class="eyebrow mb-3">05 / Organizers</div>
+        <h2 class="section-title text-4xl sm:text-5xl">Who's<br/>behind it.</h2>
+      </div>
+      <div class="md:col-span-8 md:pt-2">
+        <p class="text-lg text-muted max-w-2xl leading-relaxed">
+          Researchers from MIT, Princeton, NUS, and CMU working across dataset distillation, synthetic data,
+          and the data-centric foundations of efficient learning.
+        </p>
+      </div>
+    </div>
+
+    <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-10">
+      <li class="text-center">
+        <a href="https://georgecazenavette.github.io/" class="block group">
+          <div class="avatar mx-auto"><img alt="George Cazenavette" src="assets/img/organizers/george_cazenavette.jpg" /></div>
+          <div class="mt-3 font-serif text-lg group-hover:text-a1 transition-colors">George Cazenavette</div>
+          <div class="text-xs font-mono uppercase tracking-[0.14em] text-muted mt-1">MIT</div>
+        </a>
+      </li>
+      <li class="text-center">
+        <a href="https://xindiwu.github.io/" class="block group">
+          <div class="avatar mx-auto"><img alt="Xindi Wu" src="assets/img/organizers/xindi_wu.jpg" /></div>
+          <div class="mt-3 font-serif text-lg group-hover:text-a1 transition-colors">Xindi Wu</div>
+          <div class="text-xs font-mono uppercase tracking-[0.14em] text-muted mt-1">Princeton</div>
+        </a>
+      </li>
+      <li class="text-center">
+        <a href="https://kaiwang960112.github.io/" class="block group">
+          <div class="avatar mx-auto"><img alt="Kai Wang" src="assets/img/organizers/kai_wang.jpg" /></div>
+          <div class="mt-3 font-serif text-lg group-hover:text-a1 transition-colors">Kai Wang</div>
+          <div class="text-xs font-mono uppercase tracking-[0.14em] text-muted mt-1">NUS</div>
+        </a>
+      </li>
+      <li class="text-center">
+        <a href="https://peterwang512.github.io/" class="block group">
+          <div class="avatar mx-auto"><img alt="Sheng-Yu Wang" src="assets/img/organizers/sheng_yu_wang.jpg" /></div>
+          <div class="mt-3 font-serif text-lg group-hover:text-a1 transition-colors">Sheng-Yu Wang</div>
+          <div class="text-xs font-mono uppercase tracking-[0.14em] text-muted mt-1">CMU</div>
+        </a>
+      </li>
+      <li class="text-center">
+        <a href="https://x.com/ishaanpreetam" class="block group">
+          <div class="avatar mx-auto"><img alt="Ishaan Chandratreya" src="assets/img/organizers/ishaan_chandratreya.jpg" /></div>
+          <div class="mt-3 font-serif text-lg group-hover:text-a1 transition-colors">Ishaan Chandratreya</div>
+          <div class="text-xs font-mono uppercase tracking-[0.14em] text-muted mt-1">MIT</div>
+        </a>
+      </li>
+      <li class="text-center">
+        <a href="https://www.cs.cmu.edu/~junyanz/" class="block group">
+          <div class="avatar mx-auto"><img alt="Jun-Yan Zhu" src="assets/img/organizers/junyan_zhu.jpg" /></div>
+          <div class="mt-3 font-serif text-lg group-hover:text-a1 transition-colors">Jun-Yan Zhu</div>
+          <div class="text-xs font-mono uppercase tracking-[0.14em] text-muted mt-1">CMU</div>
+        </a>
+      </li>
+    </ul>
+
+    <div class="mt-16 flex items-start gap-4 text-sm text-muted">
+      <svg class="w-4 h-4 mt-0.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 8h16M8 8v12"/></svg>
+      <p>Questions? Contact George at <a class="ul-link text-ink" href="mailto:gcaz@mit.edu">gcaz@mit.edu</a>.</p>
+    </div>
+  </div>
+  <div class="data-rule max-w-7xl mx-auto"></div>
+</section>
+
+<!-- Past editions / archive -->
+<section id="archive" class="relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
+      <div class="md:col-span-5">
+        <div class="eyebrow mb-3">Past editions</div>
+        <h2 class="section-title text-4xl sm:text-5xl">CDEL has<br/>history.</h2>
+      </div>
+      <div class="md:col-span-7">
+        <a href="iccv2025/" class="block group border border-line p-6 sm:p-8 hover:border-ink/60 transition-colors">
+          <div class="flex items-baseline justify-between gap-6">
+            <div>
+              <div class="eyebrow">Workshop</div>
+              <div class="mt-2 font-serif text-3xl">CDEL @ ICCV 2025</div>
+              <div class="mt-1 text-muted">Honolulu · October 20, 2025 · 5 invited talks · 34 accepted papers</div>
+            </div>
+            <div class="text-2xl font-serif italic text-a1 group-hover:translate-x-1 transition-transform">→</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between text-xs font-mono uppercase tracking-[0.16em] text-muted">
+    <div>CDEL — Curated Data for Efficient Learning · ECCV 2026</div>
+    <div class="flex gap-6">
+      <a href="https://groups.google.com/g/cdel-workshop-announce" target="_blank" rel="noopener" class="hover:text-ink transition-colors">Subscribe</a>
+      <a href="iccv2025/" class="hover:text-ink transition-colors">Archive (ICCV 2025)</a>
+      <a href="mailto:gcaz@mit.edu" class="hover:text-ink transition-colors">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle
+  const toggle = document.getElementById('theme-toggle');
+  toggle?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+
+  // Reveal-on-scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Particle field — gravity-curated point cloud
+  (function () {
+    const canvas = document.getElementById('particles');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const state = {
+      w: 0, h: 0, dpr: Math.min(window.devicePixelRatio || 1, 2),
+      points: [], links: [], mouse: { x: -9999, y: -9999, active: false, t: 0 },
+      lastT: 0,
+    };
+
+    function resize() {
+      const rect = canvas.getBoundingClientRect();
+      state.w = rect.width;
+      state.h = rect.height;
+      canvas.width = Math.floor(rect.width * state.dpr);
+      canvas.height = Math.floor(rect.height * state.dpr);
+      ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+      seed();
+    }
+
+    function seed() {
+      // Density scales with viewport, capped for perf
+      const area = state.w * state.h;
+      const target = Math.min(260, Math.max(110, Math.floor(area / 7800)));
+      state.points.length = 0;
+      for (let i = 0; i < target; i++) {
+        const cls = Math.random();
+        state.points.push({
+          x: Math.random() * state.w,
+          y: Math.random() * state.h,
+          vx: (Math.random() - 0.5) * 0.18,
+          vy: (Math.random() - 0.5) * 0.18,
+          r: 0.7 + Math.random() * 1.6,
+          // Mix between accent1 and accent2 for "category"
+          mix: cls,
+          // A few "keystone" points are slightly larger and brighter
+          key: Math.random() < 0.05,
+          phase: Math.random() * Math.PI * 2,
+        });
+      }
+    }
+
+    function readVar(name) {
+      const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+      // expects "r g b"
+      return v.split(/\s+/).map(Number);
+    }
+
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    function mixRGB(c1, c2, t) {
+      return [Math.round(lerp(c1[0], c2[0], t)), Math.round(lerp(c1[1], c2[1], t)), Math.round(lerp(c1[2], c2[2], t))];
+    }
+
+    let cachedColors = null, cachedDark = null;
+    function colors() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (cachedColors && cachedDark === isDark) return cachedColors;
+      cachedDark = isDark;
+      cachedColors = {
+        a1: readVar('--a1'),
+        a2: readVar('--a2'),
+        ink: readVar('--ink'),
+        bg: readVar('--bg'),
+        line: readVar('--line'),
+        isDark,
+      };
+      return cachedColors;
+    }
+
+    // Invalidate cache on theme change
+    new MutationObserver(() => { cachedColors = null; }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+    function step(t) {
+      const dt = state.lastT ? Math.min(48, t - state.lastT) : 16;
+      state.lastT = t;
+
+      const c = colors();
+      ctx.clearRect(0, 0, state.w, state.h);
+
+      // Soft attractor at mouse
+      const mActive = state.mouse.active;
+      const mx = state.mouse.x, my = state.mouse.y;
+      const PULL_R = 180, PULL_R2 = PULL_R * PULL_R;
+
+      // Update points
+      for (let i = 0; i < state.points.length; i++) {
+        const p = state.points[i];
+        if (!reduceMotion) {
+          p.x += p.vx * (dt / 16);
+          p.y += p.vy * (dt / 16);
+          // Gentle wander
+          p.vx += (Math.random() - 0.5) * 0.006;
+          p.vy += (Math.random() - 0.5) * 0.006;
+          // Damping
+          p.vx *= 0.992; p.vy *= 0.992;
+          // Speed clamp
+          const sp = Math.hypot(p.vx, p.vy);
+          if (sp > 0.5) { p.vx *= 0.5 / sp; p.vy *= 0.5 / sp; }
+
+          // Mouse "curation": pull nearby points
+          if (mActive) {
+            const dx = mx - p.x, dy = my - p.y;
+            const d2 = dx*dx + dy*dy;
+            if (d2 < PULL_R2 && d2 > 1) {
+              const f = (1 - d2 / PULL_R2);
+              p.vx += (dx / Math.sqrt(d2)) * f * 0.18;
+              p.vy += (dy / Math.sqrt(d2)) * f * 0.18;
+              p.curated = Math.min(1, (p.curated || 0) + 0.06);
+            } else if (p.curated) {
+              p.curated *= 0.96;
+            }
+          } else if (p.curated) {
+            p.curated *= 0.97;
+          }
+
+          // Wrap at edges
+          if (p.x < -10) p.x = state.w + 10;
+          else if (p.x > state.w + 10) p.x = -10;
+          if (p.y < -10) p.y = state.h + 10;
+          else if (p.y > state.h + 10) p.y = -10;
+        }
+      }
+
+      // Draw constellation links
+      const NEIGHBOR = 110, NEIGHBOR2 = NEIGHBOR * NEIGHBOR;
+      ctx.lineWidth = 1;
+      for (let i = 0; i < state.points.length; i++) {
+        const p = state.points[i];
+        for (let j = i + 1; j < state.points.length; j++) {
+          const q = state.points[j];
+          const dx = p.x - q.x, dy = p.y - q.y;
+          const d2 = dx*dx + dy*dy;
+          if (d2 < NEIGHBOR2) {
+            const t = 1 - d2 / NEIGHBOR2;
+            const mix = (p.mix + q.mix) * 0.5;
+            const col = mixRGB(c.a1, c.a2, mix);
+            const baseA = c.isDark ? 0.20 : 0.13;
+            ctx.strokeStyle = `rgba(${col[0]},${col[1]},${col[2]},${baseA * t})`;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(q.x, q.y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw points
+      for (let i = 0; i < state.points.length; i++) {
+        const p = state.points[i];
+        const col = mixRGB(c.a1, c.a2, p.mix);
+        const curated = p.curated || 0;
+        const r = (p.key ? p.r * 1.6 : p.r) + curated * 1.4;
+        const baseA = c.isDark ? 0.55 : 0.6;
+        const a = baseA + curated * 0.4;
+        // glow
+        if (p.key || curated > 0.05) {
+          const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 6);
+          grad.addColorStop(0, `rgba(${col[0]},${col[1]},${col[2]},${0.35 * (p.key ? 1 : curated)})`);
+          grad.addColorStop(1, `rgba(${col[0]},${col[1]},${col[2]},0)`);
+          ctx.fillStyle = grad;
+          ctx.beginPath(); ctx.arc(p.x, p.y, r * 6, 0, Math.PI * 2); ctx.fill();
+        }
+        ctx.fillStyle = `rgba(${col[0]},${col[1]},${col[2]},${a})`;
+        ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, Math.PI * 2); ctx.fill();
+      }
+
+      // Cursor halo
+      if (mActive) {
+        const grad = ctx.createRadialGradient(mx, my, 0, mx, my, 140);
+        const col = mixRGB(c.a1, c.a2, 0.5);
+        grad.addColorStop(0, `rgba(${col[0]},${col[1]},${col[2]},${c.isDark ? 0.18 : 0.12})`);
+        grad.addColorStop(1, `rgba(${col[0]},${col[1]},${col[2]},0)`);
+        ctx.fillStyle = grad;
+        ctx.beginPath(); ctx.arc(mx, my, 140, 0, Math.PI * 2); ctx.fill();
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    function onMove(e) {
+      const rect = canvas.getBoundingClientRect();
+      const t = e.touches ? e.touches[0] : e;
+      state.mouse.x = t.clientX - rect.left;
+      state.mouse.y = t.clientY - rect.top;
+      state.mouse.active = true;
+    }
+    function onLeave() { state.mouse.active = false; }
+
+    window.addEventListener('resize', resize);
+    canvas.addEventListener('mousemove', onMove);
+    canvas.addEventListener('mouseleave', onLeave);
+    canvas.addEventListener('touchmove', onMove, { passive: true });
+    canvas.addEventListener('touchend', onLeave);
+    // Hero hosts the canvas — also track mouse over the whole hero so text doesn't block interaction
+    const hero = document.getElementById('top');
+    hero?.addEventListener('mousemove', onMove);
+    hero?.addEventListener('mouseleave', onLeave);
+
+    resize();
+    requestAnimationFrame(step);
+  })();
+</script>
+
+</body>
+</html>

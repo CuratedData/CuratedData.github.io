@@ -1,0 +1,483 @@
+<!-- <!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Curated Data for Efficient Learning | The ICCV 2025 Workshop on Curated Data for Efficient Learning</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Curated Data for Efficient Learning" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The ICCV 2025 Workshop on Curated Data for Efficient Learning" />
+<meta property="og:description" content="The ICCV 2025 Workshop on Curated Data for Efficient Learning" />
+<link rel="canonical" href="https://curateddata.github.io/iccv2025/" />
+<meta property="og:url" content="http://0.0.0.0:4000/" />
+<meta property="og:site_name" content="Curated Data for Efficient Learning" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Curated Data for Efficient Learning" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"The ICCV 2025 Workshop on Curated Data for Efficient Learning","headline":"Curated Data for Efficient Learning","name":"Curated Data for Efficient Learning","url":"http://0.0.0.0:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta property="og:title" content='SynData4CV-CVPR'/>
+    <meta property="og:image" content="pics/hawaii.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="200">
+    <meta property="og:image:height" content="200">
+    <meta property="og:type" content='website'/>
+    <meta name="description" content="The ICCV 2025 Workshop on Curated Data for Efficient Learning"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#39275B">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/style.css?v=">
+  <!-- add navigation bar -->
+ <!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="UTF-8">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Curated Data for Efficient Learning | The ICCV 2025 Workshop on Curated Data for Efficient Learning</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Curated Data for Efficient Learning" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The ICCV 2025 Workshop on Curated Data for Efficient Learning" />
+<meta property="og:description" content="The ICCV 2025 Workshop on Curated Data for Efficient Learning" />
+<link rel="canonical" href="https://curateddata.github.io/iccv2025/" />
+<meta property="og:url" content="http://0.0.0.0:4000/" />
+<meta property="og:site_name" content="Curated Data for Efficient Learning" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Curated Data for Efficient Learning" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"The ICCV 2025 Workshop on Curated Data for Efficient Learning","headline":"Curated Data for Efficient Learning","name":"Curated Data for Efficient Learning","url":"http://0.0.0.0:4000/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta property="og:title" content='SynData4CV-CVPR'/>
+    <meta property="og:image" content="pics/hawaii.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="200">
+    <meta property="og:image:height" content="200">
+    <meta property="og:type" content='website'/>
+    <meta name="description" content="The ICCV 2025 Workshop on Curated Data for Efficient Learning"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#39275B">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/style.css?v=">
+
+  <!-- add navigation bar -->
+  <!--  <nav>
+    <ul>
+      <li><a href="/">ICCV 2025 Workshop</a></li>
+      <li><a href="/cvpr2024.html">CVPR 2024 Workshop (Previous)</a></li>
+    </ul>
+  </nav> -->
+
+  <style>
+    nav ul {
+      list-style: none; /* Remove bullets */
+      padding: 0;
+      margin: 0;
+      display: flex; /* Arrange items in a row */
+      justify-content: center; /* Center the navigation bar */
+    }
+
+    nav ul li {
+      margin: 0 10px; /* Add some spacing between items */
+    }
+
+    nav ul li a {
+      text-decoration: none; /* Remove underline */
+      color: #000; /* Change color as needed */
+      font-weight: bold; /* Make text bold */
+      font-size: 18px; /* Adjust size as needed */
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: #39275B; /* Hover effect color */
+    }
+  </style>
+  </head>
+  <body>
+  <style>
+    .logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      background-color: #000000;
+    }
+
+  .page-header1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+  text-align: center;
+
+
+  background-image: url('pics/hawaii.jpg');
+}
+
+  .page-header2 {
+    background-color: #ffffff;
+    background-image: linear-gradient(120deg, #ffffff, #ffffff);
+  }
+
+  .btn {
+  display: inline-block;
+  padding: 10px 16px;
+  margin: 0.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 0.3rem;
+  transition: background-color 0.3s ease;
+  text-shadow: -0.1px -0.1px 0 #000000, 0.1px -0.1px 0 #000000, -0.1px 0.1px 0 #000000, 0.1px 0.1px 0 #000000;
+  max-width: 90vw;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+  /* Style for the ICCV logo to float on top of background */
+  .iccv-logo {
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  margin: 20px auto 10px;
+}
+
+  /* Add some text shadow to help visibility against variable backgrounds */
+  .project-name, .project-tagline {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Adjust spacing for the logo container */
+  .project-tagline {
+    margin-top: 20px; /* Added additional top margin to move everything down */
+  }
+  /* Mobile layout adjustments */
+@media (max-width: 600px) {
+  .btn {
+    display: block;
+    width: 100%;
+    max-width: 90vw;
+    margin: 0.3rem auto;
+    font-size: 1rem;
+  }
+
+  .iccv-logo {
+    width: 80%;
+  }
+
+  .project-name {
+    font-size: 1.75rem;
+  }
+
+  .project-tagline {
+    font-size: 1.2rem;
+  }
+}
+  </style>
+    <section class="page-header page-header1">
+      <!-- <img alt="logo" src="pics/placehold-logo.svg" class = "logo" > -->
+      <h1 class="project-name" style="color:#ffffff; ">Curated Data for Efficient Learning</h1>
+     <h2 class="project-tagline" style="font-size: 32px; color:#ffffff; opacity: 100%;">
+      <img src="pics/iccv.png" alt="ICCV 2025 Logo" class="iccv-logo">
+     </h2>
+   
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+       
+
+    <a href="./index.html" class="btn" style="color:#ffffff ; font-size: large; text-shadow: -0.1px -0.1px 0 #000000, 0.1px -0.1px 0 #000000, -0.1px 0.1px 0 #000000, 0.1px 0.1px 0 #000000;">Overview</a>
+  
+
+    <a href="./index.html#invited-speakers" class="btn" style="color:#ffffff ; font-size: large; text-shadow: -0.1px -0.1px 0 #000000, 0.1px -0.1px 0 #000000, -0.1px 0.1px 0 #000000, 0.1px 0.1px 0 #000000;">Invited Speakers</a>
+  
+
+    <a href="./schedule.html" class="btn" style="color:#ffffff ; font-size: large; text-shadow: -0.1px -0.1px 0 #000000, 0.1px -0.1px 0 #000000, -0.1px 0.1px 0 #000000, 0.1px 0.1px 0 #000000;">Schedule</a>
+  
+
+    <a href="./index.html#call-for-papers" class="btn" style="color:#ffffff ; font-size: large; text-shadow: -0.1px -0.1px 0 #000000, 0.1px -0.1px 0 #000000, -0.1px 0.1px 0 #000000, 0.1px 0.1px 0 #000000;">Call for Papers</a>
+  
+
+    <a href="./index.html#deadlines" class="btn" style="color:#ffffff ; font-size: large; text-shadow: -0.1px -0.1px 0 #000000, 0.1px -0.1px 0 #000000, -0.1px 0.1px 0 #000000, 0.1px 0.1px 0 #000000;">Deadlines</a>
+  
+
+    <a href="./index.html#related-workshops" class="btn" style="color:#ffffff ; font-size: large; text-shadow: -0.1px -0.1px 0 #000000, 0.1px -0.1px 0 #000000, -0.1px 0.1px 0 #000000, 0.1px 0.1px 0 #000000;">Related Workshops</a>
+  
+
+    <a href="./index.html#organizers" class="btn" style="color:#ffffff ; font-size: large; text-shadow: -0.1px -0.1px 0 #000000, 0.1px -0.1px 0 #000000, -0.1px 0.1px 0 #000000, 0.1px 0.1px 0 #000000;">Organizers</a>
+  
+
+    <a href="./papers.html" class="btn" style="color:#ffffff ; font-size: large; text-shadow: -0.1px -0.1px 0 #000000, 0.1px -0.1px 0 #000000, -0.1px 0.1px 0 #000000, 0.1px 0.1px 0 #000000;">Accepted Papers</a>
+  
+
+    </section>
+
+
+    <section class="main-content">
+      <style> 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  width: 75%;
+}
+</style>
+
+<style>
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+}
+td {
+  padding: 6px 8px;
+  vertical-align: top;
+}
+</style>
+
+<style>
+@media (max-width: 600px) {
+  h1, h2, h3 {
+    font-size: 1.2em;
+  }
+
+  div {
+    padding: 0 10px;
+  }
+
+  .center {
+    width: 100%;
+  }
+}
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<h1 id="overview">Overview</h1>
+<div style="text-align: left; max-width: 800px; margin: auto;">
+The ICCV 2025 Workshop on Curated Data for Efficient Learning (CDEL) seeks to advance the understanding and development of data-centric techniques that improve the efficiency of training large-scale machine learning models. As model sizes continue to grow and data requirements scale accordingly, this workshop brings attention to the increasingly critical role of data quality, selection, and synthesis in achieving high model performance with reduced computational cost. Rather than focusing on ever-larger datasets and models, CDEL emphasizes the curation and distillation of high-value data—leveraging techniques such as dataset distillation, data pruning, synthetic data generation, and sampling optimization. These approaches aim to reduce redundancy, improve generalization, and enable learning in data-scarce regimes. The workshop will bring together researchers and practitioners from vision, language, and multimodal learning to share insights and foster collaborations around efficient, scalable, and sustainable data-driven machine learning.
+</div>
+
+<h1 id="invited-speakers">Invited Speakers</h1>
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://liuzhuang13.github.io/">
+      <img alt="Zhuang Liu" src="pics/speakers/zhuang_liu.png" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://liuzhuang13.github.io/">Zhuang Liu</a><br />
+    Princeton University<br />
+    <em style="font-size: 0.9em; color: #666;">8:30 – 9:15 AM</em>
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://beerys.github.io/">
+      <img alt="Sara Beery" src="pics/speakers/sara_beery.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://beerys.github.io/">Sara Beery</a><br />
+    Massachusetts Institute of Technology<br />
+    <em style="font-size: 0.9em; color: #666;">10:00 – 10:45 AM</em>
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://andrewowens.com/">
+      <img alt="Andrew Owens" src="pics/speakers/andrew_owens.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://andrewowens.com/">Andrew Owens</a><br />
+    Cornell Tech<br />
+    <em style="font-size: 0.9em; color: #666;">2:15 – 3:00 PM</em>
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://web.mit.edu/phillipi/">
+      <img alt="Phillip Isola" src="pics/speakers/phillip_isola.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://web.mit.edu/phillipi/">Phillip Isola</a><br />
+    Massachusetts Institute of Technology<br />
+    <em style="font-size: 0.9em; color: #666;">3:45 – 4:30 PM</em>
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://www.cs.cornell.edu/~weichiu/">
+      <img alt="Wei-Chiu Ma" src="pics/speakers/weichiu_ma.png" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://www.cs.cornell.edu/~weichiu/">Wei-Chiu Ma</a><br />
+    Cornell University<br />
+    <em style="font-size: 0.9em; color: #666;">4:30 – 5:15 PM</em>
+  </div>
+</div>
+
+<h1 id="schedule">Schedule</h1>
+<ul>
+  <li><strong>Date:</strong> October 20, 2025</li>
+  <li><strong>Time:</strong> 8:30 AM – 5:30 PM</li>
+  <li><strong>Location:</strong> Room 304-A</li>
+</ul>
+
+<p>Click <a href="./schedule.html">here</a> for full schedule!</p>
+
+<h1 id="call-for-papers">Call for Papers</h1>
+<p><del><strong>Archival Submission Portal:</strong> <a href="https://openreview.net/group?id=thecvf.com/ICCV/2025/Workshop/CDEL">OpenReview</a></del></p>
+
+<p><del><strong>Non-Archival Submission Portal:</strong> <a href="https://openreview.net/group?id=thecvf.com/ICCV/2025/Workshop/CDEL_Non-Archival">OpenReview</a></del></p>
+
+<p>We welcome submissions on all topics related to the curation of training data.<br />
+Some potential topics include:</p>
+<ul>
+  <li><strong>Data Pruning:</strong> How can we eliminate redundant or low-quality samples from large datasets?</li>
+  <li><strong>Synthetic Data:</strong> How can we use generative models to create or augment datasets?</li>
+  <li><strong>Dataset Distillation:</strong> How can we learn tiny datasets of highly-efficient synthetic samples?</li>
+  <li><strong>Obscure Domains:</strong> How can we train models in areas where existing data is extremely scarce?
+<!-- - **Scaling Laws:** How does the quality of training samples affect performance scaling?--></li>
+  <li><strong>Future Directions:</strong> What problems in data-centric AI can we expect in the near future?</li>
+</ul>
+
+<p><strong>Submission Details:</strong><br />
+We accept submissions of both long conference-style papers (8 pages) and short extended abstracts (4 pages). 
+Authors of accepted long papers have the <em>option</em> of having their work published in the ICCV workshop proceedings if they do not violate dual-submission guidelines. 
+<br />
+<br />
+We also welcome submissions of work currently in submission or recently accepted to other venues, but these will not be published in the workshop proceedings (but may still be presented at our workshop). 
+<br />
+<br />
+Please sign up <a href="https://docs.google.com/forms/d/e/1FAIpQLScLDrqtEKdd4TqS3sfQ2MLbtBU_IRZOysw-r_LHQ7-TVaABBg/viewform?usp=dialog">here</a> if you’d like to volunteer as a reviewer.</p>
+
+<h1 id="deadlines">Deadlines</h1>
+<p><strong>Archival:</strong></p>
+<ul>
+  <li>Submission deadline: July 7, 2025</li>
+  <li>Notification: July 11, 2025</li>
+  <li>Camera-ready: August 18, 2025</li>
+</ul>
+
+<p><strong>Non-Archival:</strong></p>
+<ul>
+  <li>Submission deadline: August 29, 2025</li>
+  <li>Notification: September 12, 2025</li>
+  <li>Camera-ready: September 19, 2025</li>
+</ul>
+
+<p>Please contact George (<a href="mailto:gcaz@mit.edu">gcaz@mit.edu</a>) with any questions.</p>
+
+<h1 id="related-workshops">Related Workshops</h1>
+<ul>
+  <li><a href="https://eccv2024.org/">Dataset Distillation Challenge @ ECCV 2024</a></li>
+  <li><a href="https://neurips.cc/Conferences/2023/">Data-centric AI @ NeurIPS 2023</a></li>
+</ul>
+
+<h1 id="organizers">Organizers</h1>
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center;">
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://georgecazenavette.github.io/">
+      <img alt="George Cazenavette" src="pics/organizers/george_cazenavette.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://georgecazenavette.github.io/">George Cazenavette</a><br />
+    Massachusetts Institute of Technology
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://kaiwang960112.github.io/">
+      <img alt="Kai Wang" src="pics/organizers/kai_wang.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://kaiwang960112.github.io/">Kai Wang</a><br />
+    National University of Singapore
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://lizekai-richard.github.io/">
+      <img alt="Zekai Li" src="pics/organizers/zekai_li.png" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://lizekai-richard.github.io/">Zekai Li</a><br />
+    National University of Singapore
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://xindiwu.github.io/">
+      <img alt="Xindi Wu" src="pics/organizers/xindi_wu.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://xindiwu.github.io/">Xindi Wu</a><br />
+    Princeton University
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://tongzhouwang.info/">
+      <img alt="Tongzhou Wang" src="pics/organizers/tongzhou_wang.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://tongzhouwang.info/">Tongzhou Wang</a><br />
+    OpenAI
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://peihaowang.github.io/">
+      <img alt="Peihao Wang" src="pics/organizers/peihao_wang.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://peihaowang.github.io/">Peihao Wang</a><br />
+    University of Texas at Austin
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://ruihangao.github.io/">
+      <img alt="Ruihan Gao" src="pics/organizers/ruihan_gao.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://ruihangao.github.io/">Ruihan Gao</a><br />
+    Carnegie Mellon University
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://scholar.google.com.hk/citations?user=R3_AR5EAAAAJ">
+      <img alt="Bo Zhao" src="pics/organizers/bo_zhao.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://scholar.google.com.hk/citations?user=R3_AR5EAAAAJ">Bo Zhao</a><br />
+    Shanghai Jiao Tong University
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://vita-group.github.io/research.html">
+      <img alt="Zhangyang Wang" src="pics/organizers/zhangyang_wang.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://vita-group.github.io/research.html">Zhangyang Wang</a><br />
+    University of Texas at Austin
+  </div>
+
+  <div style="flex: 1 1 300px; max-width: 300px; margin: 10px;">
+    <a href="https://www.cs.cmu.edu/~junyanz/">
+      <img alt="Jun-Yan Zhu" src="pics/organizers/junyan_zhu.jpg" height="200" width="200" style="border-radius: 50%; object-fit: cover;" />
+    </a><br />
+    <a href="https://www.cs.cmu.edu/~junyanz/">Jun-Yan Zhu</a><br />
+    Carnegie Mellon University
+  </div>
+</div>
+
+
+
+      <footer class="site-footer">
+
+      </footer>
+    </section>
+
+    
+  </body>
+</html>

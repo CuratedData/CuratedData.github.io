@@ -46,14 +46,27 @@ def download_google_drive_file(file_id, output_path):
     session = requests.Session()
 
     try:
+        # First request
         response = session.get(url, stream=True)
 
-        # Handle large files that require confirmation
+        # Check for virus scan warning (large files)
+        token = None
         for key, value in response.cookies.items():
             if key.startswith('download_warning'):
-                params = {'id': file_id, 'confirm': value}
-                response = session.get(url, params=params, stream=True)
+                token = value
                 break
+
+        # If there's a confirmation token, make a second request
+        if token:
+            url = f"https://drive.google.com/uc?export=download&id={file_id}&confirm={token}"
+            response = session.get(url, stream=True)
+
+        # Check content type to verify it's actually a PDF
+        content_type = response.headers.get('Content-Type', '')
+        if 'text/html' in content_type:
+            # This means we got an HTML page (error or login page), not a PDF
+            print(f"  ✗ Got HTML instead of PDF - file may not be publicly accessible")
+            return False
 
         # Check if download was successful
         if response.status_code == 200:
@@ -62,6 +75,13 @@ def download_google_drive_file(file_id, output_path):
                 for chunk in response.iter_content(chunk_size=32768):
                     if chunk:
                         f.write(chunk)
+
+            # Verify file size is reasonable (at least 1KB)
+            file_size = os.path.getsize(output_path)
+            if file_size < 1024:
+                print(f"  ✗ Downloaded file too small ({file_size} bytes) - likely not a valid PDF")
+                return False
+
             return True
         else:
             print(f"  ✗ HTTP {response.status_code}")
@@ -84,58 +104,70 @@ def download_pdfs_from_csv(csv_file, output_dir='downloaded_pdfs'):
     # Create output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
 
-    # Track statistics
-    total = 0
-    downloaded = 0
-    skipped = 0
-    failed = 0
+    # First pass: collect all papers, keeping only the most recent for each title
+    papers_by_title = {}
 
     with open(csv_file, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
 
-        for i, row in enumerate(reader, 1):
-            pdf_url = row['If not providing an arXiv link, please upload a PDF of your paper here.']
+        for row in reader:
             title = row['Paper Title']
+            pdf_url = row['If not providing an arXiv link, please upload a PDF of your paper here.']
 
             # Skip if no PDF URL
             if not pdf_url or not pdf_url.strip():
                 continue
 
-            total += 1
+            # Store/overwrite with most recent entry (later rows overwrite earlier ones)
+            papers_by_title[title] = {
+                'title': title,
+                'pdf_url': pdf_url
+            }
 
-            # Extract Google Drive file ID
-            file_id = extract_google_drive_id(pdf_url)
+    # Track statistics
+    total = len(papers_by_title)
+    downloaded = 0
+    skipped = 0
+    failed = 0
 
-            if not file_id:
-                print(f"{i}. ✗ Could not extract file ID from: {title}")
-                failed += 1
-                continue
+    # Second pass: download the PDFs
+    for i, paper in enumerate(papers_by_title.values(), 1):
+        title = paper['title']
+        pdf_url = paper['pdf_url']
+        # Extract Google Drive file ID
+        file_id = extract_google_drive_id(pdf_url)
 
-            # Create safe filename from paper title
-            safe_title = re.sub(r'[^\w\s-]', '', title)
-            safe_title = re.sub(r'[-\s]+', '_', safe_title)
-            safe_title = safe_title[:100]  # Limit length
-            filename = f"{safe_title}.pdf"
-            output_path = os.path.join(output_dir, filename)
+        if not file_id:
+            print(f"{i}. ✗ Could not extract file ID from: {title}")
+            failed += 1
+            continue
 
-            # Skip if already downloaded
+        # Create safe filename from paper title
+        safe_title = re.sub(r'[^\w\s-]', '', title)
+        safe_title = re.sub(r'[-\s]+', '_', safe_title)
+        safe_title = safe_title[:100]  # Limit length
+        filename = f"{safe_title}.pdf"
+        output_path = os.path.join(output_dir, filename)
+
+        # Skip if already downloaded
+        if os.path.exists(output_path):
+            print(f"{i}. ○ Already exists: {filename}")
+            skipped += 1
+            continue
+
+        # Download the file
+        print(f"{i}. Downloading: {title}")
+        print(f"   → {filename}")
+
+        if download_google_drive_file(file_id, output_path):
+            print(f"   ✓ Success ({os.path.getsize(output_path) / 1024:.1f} KB)")
+            downloaded += 1
+        else:
+            failed += 1
+            # Remove partial file if download failed
             if os.path.exists(output_path):
-                print(f"{i}. ○ Already exists: {filename}")
-                skipped += 1
-                continue
+                os.remove(output_path)
 
-            # Download the file
-            print(f"{i}. Downloading: {title}")
-            print(f"   → {filename}")
-
-            if download_google_drive_file(file_id, output_path):
-                print(f"   ✓ Success ({os.path.getsize(output_path) / 1024:.1f} KB)")
-                downloaded += 1
-            else:
-                failed += 1
-                # Remove partial file if download failed
-                if os.path.exists(output_path):
-                    os.remove(output_path)
 
     # Print summary
     print("\n" + "=" * 50)
@@ -146,7 +178,6 @@ def download_pdfs_from_csv(csv_file, output_dir='downloaded_pdfs'):
     print(f"  Failed: {failed}")
     print(f"  Output directory: {output_dir}")
     print("=" * 50)
-
 
 if __name__ == "__main__":
     # Configuration
