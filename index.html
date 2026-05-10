@@ -467,13 +467,36 @@
           <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
           Subscribe to announcements
         </a>
+
+        <div class="mt-8 border border-line p-5" id="countdown-card" data-deadline="2026-07-30T12:00:00Z">
+          <div class="eyebrow text-a1 mb-3">Time until submission</div>
+          <div class="grid grid-cols-4 gap-3 font-mono tabular-nums" id="submission-countdown" aria-live="polite">
+            <div>
+              <div class="text-3xl sm:text-4xl leading-none" data-unit="days">--</div>
+              <div class="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted">days</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl leading-none" data-unit="hours">--</div>
+              <div class="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted">hrs</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl leading-none" data-unit="minutes">--</div>
+              <div class="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted">min</div>
+            </div>
+            <div>
+              <div class="text-3xl sm:text-4xl leading-none" data-unit="seconds">--</div>
+              <div class="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted">sec</div>
+            </div>
+          </div>
+          <div class="mt-4 text-xs font-mono uppercase tracking-[0.14em] text-muted">July 29, 2026 · 23:59 AOE (UTC−12)</div>
+        </div>
       </div>
       <div class="md:col-span-8">
         <ol class="border border-line divide-y divide-line">
           <li class="grid grid-cols-12 gap-4 p-5 sm:p-6 items-baseline">
             <div class="col-span-3 sm:col-span-2 font-mono text-xs uppercase tracking-[0.16em] text-muted">Submit</div>
             <div class="col-span-5 sm:col-span-6 font-serif text-xl">Submission deadline</div>
-            <div class="col-span-4 sm:col-span-4 text-right font-mono text-sm text-a1">July 29, 2026</div>
+            <div class="col-span-4 sm:col-span-4 text-right font-mono text-sm text-a1">July 29, 2026 <span class="text-muted">AOE</span></div>
           </li>
           <li class="grid grid-cols-12 gap-4 p-5 sm:p-6 items-baseline">
             <div class="col-span-3 sm:col-span-2 font-mono text-xs uppercase tracking-[0.16em] text-muted">Notify</div>
@@ -485,8 +508,8 @@
             <div class="col-span-5 sm:col-span-6 font-serif text-xl">Camera-ready</div>
             <div class="col-span-4 sm:col-span-4 text-right font-mono text-sm text-muted">August 15, 2026</div>
           </li>
-          <li class="grid grid-cols-12 gap-4 p-5 sm:p-6 items-baseline bg-a1/5">
-            <div class="col-span-3 sm:col-span-2 font-mono text-xs uppercase tracking-[0.16em] text-a1">Event</div>
+          <li class="grid grid-cols-12 gap-4 p-5 sm:p-6 items-baseline">
+            <div class="col-span-3 sm:col-span-2 font-mono text-xs uppercase tracking-[0.16em] text-muted">Event</div>
             <div class="col-span-5 sm:col-span-6 font-serif text-xl">Workshop @ ECCV 2026 <span class="block text-sm font-sans text-muted normal-case tracking-normal mt-1">Malmö, Sweden</span></div>
             <div class="col-span-4 sm:col-span-4 text-right font-mono text-sm">Sept 8 or 9, 2026 <span class="text-muted">(TBD)</span></div>
           </li>
@@ -853,6 +876,47 @@
 
     resize();
     requestAnimationFrame(step);
+  })();
+
+  // Submission countdown — deadline is end-of-day July 29 AOE (UTC−12),
+  // i.e. 2026-07-30T12:00:00Z.
+  (function () {
+    const card = document.getElementById('countdown-card');
+    if (!card) return;
+    const deadline = new Date(card.dataset.deadline).getTime();
+    const units = {
+      days:    card.querySelector('[data-unit="days"]'),
+      hours:   card.querySelector('[data-unit="hours"]'),
+      minutes: card.querySelector('[data-unit="minutes"]'),
+      seconds: card.querySelector('[data-unit="seconds"]'),
+    };
+    const pad = n => String(n).padStart(2, '0');
+
+    function tick() {
+      const diff = deadline - Date.now();
+      if (diff <= 0) {
+        units.days.textContent = '00';
+        units.hours.textContent = '00';
+        units.minutes.textContent = '00';
+        units.seconds.textContent = '00';
+        const label = card.querySelector('.eyebrow');
+        if (label) label.textContent = 'Submission closed';
+        return false;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      units.days.textContent = pad(d);
+      units.hours.textContent = pad(h);
+      units.minutes.textContent = pad(m);
+      units.seconds.textContent = pad(s);
+      return true;
+    }
+
+    if (tick()) {
+      const id = setInterval(() => { if (!tick()) clearInterval(id); }, 1000);
+    }
   })();
 </script>
 
