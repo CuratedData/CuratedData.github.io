@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Schedule · Curated Data for Efficient Learning: ECCV 2026 Workshop</title>
+<meta name="description" content="Program and schedule for the ECCV 2026 Workshop on Curated Data for Efficient Learning (CDEL), 9 September 2026, Malmö, Sweden." />
+<meta property="og:title" content="Schedule · Curated Data for Efficient Learning: ECCV 2026" />
+<meta property="og:description" content="Program for the ECCV 2026 Workshop on Curated Data for Efficient Learning — 9 September 2026, Malmö, Sweden." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://curateddata.github.io/schedule.html" />
+<meta property="og:image" content="https://curateddata.github.io/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Schedule · Curated Data for Efficient Learning: ECCV 2026" />
+<meta name="twitter:image" content="https://curateddata.github.io/assets/img/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script>
+  // Set theme as early as possible to avoid flash.
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var dark = saved ? saved === 'dark' : prefersDark;
+    if (dark) document.documentElement.classList.add('dark');
+  })();
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        },
+        colors: {
+          bg: 'rgb(var(--bg) / <alpha-value>)',
+          surface: 'rgb(var(--surface) / <alpha-value>)',
+          ink: 'rgb(var(--ink) / <alpha-value>)',
+          muted: 'rgb(var(--muted) / <alpha-value>)',
+          line: 'rgb(var(--line) / <alpha-value>)',
+          a1: 'rgb(var(--a1) / <alpha-value>)',
+          a2: 'rgb(var(--a2) / <alpha-value>)',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root {
+    --bg: 248 245 238;
+    --surface: 255 255 255;
+    --ink: 22 21 28;
+    --muted: 90 88 98;
+    --line: 216 211 200;
+    --a1: 227 80 47;
+    --a2: 58 47 124;
+  }
+  .dark {
+    --bg: 10 9 16;
+    --surface: 19 18 26;
+    --ink: 245 243 235;
+    --muted: 140 137 151;
+    --line: 34 32 44;
+    --a1: 255 111 77;
+    --a2: 159 134 255;
+  }
+
+  html, body { background: rgb(var(--bg)); color: rgb(var(--ink)); }
+  body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgb(var(--muted));
+  }
+
+  .section-title {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+  }
+
+  /* Nav blur */
+  .nav-glass {
+    background: rgb(var(--bg) / 0.72);
+    backdrop-filter: saturate(140%) blur(12px);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+    border-bottom: 1px solid rgb(var(--line));
+  }
+
+  /* Avatar w/ ring */
+  .avatar {
+    width: 72px; height: 72px; border-radius: 9999px; overflow: hidden; flex: none;
+    background: rgb(var(--surface));
+    box-shadow: 0 0 0 1px rgb(var(--line)), 0 8px 24px -12px rgb(var(--ink) / 0.25);
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* Animated dotted divider */
+  .data-rule {
+    height: 1px;
+    background-image: radial-gradient(circle at 1px 50%, rgb(var(--line)) 1px, transparent 1.5px);
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+  }
+
+  /* Timeline */
+  .slot {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px 28px;
+    padding: 22px 0 22px 22px;
+    border-left: 1px solid rgb(var(--line));
+  }
+  @media (min-width: 768px) {
+    .slot { grid-template-columns: 132px 1fr; padding-left: 32px; gap: 0 28px; }
+  }
+  .slot::before {
+    content: '';
+    position: absolute; left: -4px; top: 30px;
+    width: 7px; height: 7px; border-radius: 9999px;
+    background: rgb(var(--line));
+  }
+  .slot.is-talk::before { background: rgb(var(--a1)); }
+  .slot.is-orals::before { background: rgb(var(--a2)); }
+  .slot-time {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 12px; letter-spacing: 0.06em;
+    color: rgb(var(--muted));
+    padding-top: 4px;
+    white-space: nowrap;
+  }
+  .slot.is-talk .slot-time { color: rgb(var(--ink)); }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 9999px;
+    border: 1px solid rgb(var(--a2) / 0.35);
+    color: rgb(var(--a2));
+    background: rgb(var(--a2) / 0.08);
+  }
+
+  .paper {
+    padding: 12px 0;
+    border-top: 1px solid rgb(var(--line));
+  }
+  .paper:first-child { border-top: 0; padding-top: 4px; }
+
+  /* Reveal on view */
+  .reveal {
+    opacity: 0; transform: translateY(12px);
+    transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+
+<body class="bg-bg text-ink">
+
+<!-- Top nav -->
+<header class="fixed top-0 inset-x-0 z-40 nav-glass">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <span class="relative inline-flex w-7 h-7 items-center justify-center">
+        <span class="absolute inset-0 rounded-full bg-a1/20 blur-[6px]"></span>
+        <span class="relative w-2 h-2 rounded-full bg-a1"></span>
+        <span class="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-a2"></span>
+        <span class="absolute bottom-0 left-0 w-1 h-1 rounded-full bg-ink/60"></span>
+      </span>
+      <span class="font-mono text-[11px] tracking-[0.18em] uppercase text-muted group-hover:text-ink transition-colors">CDEL · ECCV 26</span>
+    </a>
+
+    <nav class="hidden md:flex items-center gap-7 text-sm">
+      <a href="index.html#overview" class="text-muted hover:text-ink transition-colors">Overview</a>
+      <a href="index.html#cfp" class="text-muted hover:text-ink transition-colors">Call for Papers</a>
+      <a href="index.html#dates" class="text-muted hover:text-ink transition-colors">Dates</a>
+      <a href="index.html#speakers" class="text-muted hover:text-ink transition-colors">Speakers</a>
+      <a href="schedule.html" class="text-ink transition-colors">Schedule</a>
+      <a href="index.html#organizers" class="text-muted hover:text-ink transition-colors">Organizers</a>
+      <a href="iccv2025/" class="text-muted hover:text-ink transition-colors">ICCV&nbsp;2025 ↗</a>
+    </nav>
+
+    <button id="theme-toggle" aria-label="Toggle theme" class="relative inline-flex w-9 h-9 items-center justify-center rounded-full border border-line hover:border-ink/50 transition-colors">
+      <svg class="w-4 h-4 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/>
+      </svg>
+      <svg class="w-4 h-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Page header -->
+<section class="relative pt-32 sm:pt-40">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="absolute top-16 right-0 w-72 h-72 rounded-full pointer-events-none" style="background: radial-gradient(closest-side, rgb(var(--a1) / 0.14), transparent 70%);"></div>
+    <div class="eyebrow mb-3 relative">Program</div>
+    <h1 class="section-title text-5xl sm:text-7xl relative">Schedule.</h1>
+    <p class="mt-6 text-lg sm:text-xl text-muted max-w-2xl relative">
+      Wednesday 9 September 2026 · Malmö, Sweden.
+    </p>
+
+    <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-px bg-line/70 border border-line relative">
+      <div class="bg-bg p-5">
+        <div class="eyebrow">Workshop room</div>
+        <div class="font-serif text-lg mt-1.5">Malmö Arena, Panorama 2</div>
+      </div>
+      <div class="bg-bg p-5">
+        <div class="eyebrow">Poster session</div>
+        <div class="font-serif text-lg mt-1.5">MalmöMässan Exhibit Hall</div>
+      </div>
+      <div class="bg-bg p-5">
+        <div class="eyebrow">All times</div>
+        <div class="font-serif text-lg mt-1.5">CEST (UTC+2)</div>
+      </div>
+    </div>
+  </div>
+  <div class="data-rule max-w-7xl mx-auto mt-14"></div>
+</section>
+
+<!-- Timeline -->
+<section class="relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-12 sm:py-16">
+    <div class="max-w-4xl">
+
+      <!-- 08:00 -->
+      <div class="slot is-talk reveal">
+        <div class="slot-time">08:15 — 09:00</div>
+        <div class="flex items-start gap-5">
+          <a href="https://paschalidoud.github.io/" target="_blank" rel="noopener" class="avatar"><img alt="Despoina Paschalidou" src="assets/img/speakers/despoina_paschalidou.jpg" /></a>
+          <div>
+            <div class="eyebrow">Invited talk</div>
+            <div class="font-serif text-2xl mt-1">
+              <a href="https://paschalidoud.github.io/" target="_blank" rel="noopener" class="hover:text-a1 transition-colors">Despoina Paschalidou</a>
+            </div>
+            <div class="text-sm text-muted mt-1">NVIDIA</div>
+            <div class="mt-3"><span class="pill">Remote</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 08:45 -->
+      <div class="slot is-talk reveal">
+        <div class="slot-time">09:00 — 09:45</div>
+        <div class="flex items-start gap-5">
+          <a href="https://yukimasano.github.io/" target="_blank" rel="noopener" class="avatar"><img alt="Yuki M. Asano" src="assets/img/speakers/yuki_asano.jpeg" /></a>
+          <div>
+            <div class="eyebrow">Invited talk</div>
+            <div class="font-serif text-2xl mt-1">
+              <a href="https://yukimasano.github.io/" target="_blank" rel="noopener" class="hover:text-a1 transition-colors">Yuki M. Asano</a>
+            </div>
+            <div class="text-sm text-muted mt-1">University of Technology Nuremberg</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 09:30 -->
+      <div class="slot is-orals reveal">
+        <div class="slot-time">09:45 — 10:15</div>
+        <div>
+          <div class="eyebrow">Oral session I</div>
+          <div class="mt-3 border border-line p-5 sm:p-6">
+            <div class="paper">
+              <div class="font-serif text-xl leading-snug">Bootstrapping a 4D LiDAR Annotation Tool from Video Foundation Models</div>
+              <div class="text-sm text-muted mt-1">Jihun Kim</div>
+            </div>
+            <div class="paper">
+              <div class="font-serif text-xl leading-snug">AGT-CV: An Aerial-Ground Team Cross-View Dataset for Heterogeneous Robot Teams in Unstructured Environments</div>
+              <div class="text-sm text-muted mt-1">Knut Peterson</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10:15 -->
+      <div class="slot is-talk reveal">
+        <div class="slot-time">10:15 — 11:00</div>
+        <div class="flex items-start gap-5">
+          <a href="https://niessnerlab.org/members/matthias_niessner/profile.html" target="_blank" rel="noopener" class="avatar"><img alt="Matthias Nießner" src="assets/img/speakers/matthias_niessner.jpg" /></a>
+          <div>
+            <div class="eyebrow">Invited talk</div>
+            <div class="font-serif text-2xl mt-1">
+              <a href="https://niessnerlab.org/members/matthias_niessner/profile.html" target="_blank" rel="noopener" class="hover:text-a1 transition-colors">Matthias Nießner</a>
+            </div>
+            <div class="text-sm text-muted mt-1">Technical University of Munich</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11:00 -->
+      <div class="slot reveal">
+        <div class="slot-time">11:00 — 12:30</div>
+        <div>
+          <div class="font-serif text-2xl">Poster session</div>
+          <div class="text-sm text-muted mt-1">Boards 261–311 · All accepted papers</div>
+        </div>
+      </div>
+
+      <!-- 12:30 -->
+      <div class="slot reveal">
+        <div class="slot-time">12:30 — 13:30</div>
+        <div>
+          <div class="font-serif text-2xl">Lunch</div>
+        </div>
+      </div>
+
+      <!-- 13:30 -->
+      <div class="slot is-talk reveal">
+        <div class="slot-time">13:30 — 14:15</div>
+        <div class="flex items-start gap-5">
+          <a href="https://j-min.io/" target="_blank" rel="noopener" class="avatar"><img alt="Jaemin Cho" src="assets/img/speakers/jaemin_cho.jpg" /></a>
+          <div>
+            <div class="eyebrow">Invited talk</div>
+            <div class="font-serif text-2xl mt-1">
+              <a href="https://j-min.io/" target="_blank" rel="noopener" class="hover:text-a1 transition-colors">Jaemin Cho</a>
+            </div>
+            <div class="text-sm text-muted mt-1">Johns Hopkins University</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14:15 -->
+      <div class="slot is-orals reveal">
+        <div class="slot-time">14:15 — 15:00</div>
+        <div>
+          <div class="eyebrow">Oral session II</div>
+          <div class="mt-3 border border-line p-5 sm:p-6">
+            <div class="paper">
+              <div class="font-serif text-xl leading-snug">BabyLand-72: Synthetic-to-Real Multi-View Infant Facial Landmark Estimation</div>
+              <div class="text-sm text-muted mt-1">José Carlos Reyes Hernández</div>
+            </div>
+            <div class="paper">
+              <div class="font-serif text-xl leading-snug">Diffuse the Object, Keep Its Label: Curating Detector Training Data from a Few Unlabeled Photographs via VLM-Built 3D Vegetation Scenes</div>
+              <div class="text-sm text-muted mt-1">Mario Malizia</div>
+            </div>
+            <div class="paper">
+              <div class="font-serif text-xl leading-snug">Speed-Variation Distillation for Generative Modeling</div>
+              <div class="text-sm text-muted mt-1">Sukit Seripanitkarn</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15:00 -->
+      <div class="slot is-talk reveal">
+        <div class="slot-time">15:00 — 15:45</div>
+        <div class="flex items-start gap-5">
+          <a href="https://andrewilyas.com/" target="_blank" rel="noopener" class="avatar"><img alt="Andrew Ilyas" src="assets/img/speakers/andrew_ilyas.jpg" /></a>
+          <div>
+            <div class="eyebrow">Invited talk</div>
+            <div class="font-serif text-2xl mt-1">
+              <a href="https://andrewilyas.com/" target="_blank" rel="noopener" class="hover:text-a1 transition-colors">Andrew Ilyas</a>
+            </div>
+            <div class="text-sm text-muted mt-1">Carnegie Mellon University</div>
+            <div class="mt-3"><span class="pill">Remote</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15:45 -->
+      <div class="slot reveal">
+        <div class="slot-time">15:45 — 16:00</div>
+        <div>
+          <div class="font-serif text-2xl">Coffee break</div>
+        </div>
+      </div>
+
+      <!-- 16:00 -->
+      <div class="slot is-talk reveal">
+        <div class="slot-time">16:00 — 16:45</div>
+        <div class="flex items-start gap-5">
+          <a href="https://serge.belongie.com/" target="_blank" rel="noopener" class="avatar"><img alt="Serge Belongie" src="assets/img/speakers/serge_belongie.jpg" /></a>
+          <div>
+            <div class="eyebrow">Invited talk</div>
+            <div class="font-serif text-2xl mt-1">
+              <a href="https://serge.belongie.com/" target="_blank" rel="noopener" class="hover:text-a1 transition-colors">Serge Belongie</a>
+            </div>
+            <div class="text-sm text-muted mt-1">University of Copenhagen</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16:45 -->
+      <div class="slot is-talk reveal">
+        <div class="slot-time">16:45 — 17:30</div>
+        <div class="flex items-start gap-5">
+          <a href="https://yunzhuli.github.io/" target="_blank" rel="noopener" class="avatar"><img alt="Yunzhu Li" src="assets/img/speakers/yunzhu_li.jpg" /></a>
+          <div>
+            <div class="eyebrow">Invited talk · Closing speaker</div>
+            <div class="font-serif text-2xl mt-1">
+              <a href="https://yunzhuli.github.io/" target="_blank" rel="noopener" class="hover:text-a1 transition-colors">Yunzhu Li</a>
+            </div>
+            <div class="text-sm text-muted mt-1">Columbia University</div>
+            <div class="mt-3"><span class="pill">Remote</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17:30 -->
+      <div class="slot reveal">
+        <div class="slot-time">17:30 — 17:40</div>
+        <div>
+          <div class="font-serif text-2xl">Closing remarks</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="data-rule max-w-7xl mx-auto"></div>
+</section>
+
+<footer class="border-t border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between text-xs font-mono uppercase tracking-[0.16em] text-muted">
+    <div>CDEL · Curated Data for Efficient Learning · ECCV 2026</div>
+    <div class="flex gap-6">
+      <a href="https://groups.google.com/g/cdel-workshop-announce" target="_blank" rel="noopener" class="hover:text-ink transition-colors">Subscribe</a>
+      <a href="iccv2025/" class="hover:text-ink transition-colors">Archive (ICCV 2025)</a>
+      <a href="mailto:gcaz@mit.edu" class="hover:text-ink transition-colors">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  toggle?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+
+  // Reveal-on-scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
