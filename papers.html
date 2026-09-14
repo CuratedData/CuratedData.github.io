@@ -1,0 +1,1100 @@
+<!doctype html>
+<html lang="en" class="">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Accepted Papers · Curated Data for Efficient Learning: ECCV 2026 Workshop</title>
+<meta name="description" content="The 51 papers accepted to the ECCV 2026 Workshop on Curated Data for Efficient Learning (CDEL), Malmö, Sweden." />
+<meta property="og:title" content="Accepted Papers · Curated Data for Efficient Learning: ECCV 2026" />
+<meta property="og:description" content="51 accepted papers from the ECCV 2026 Workshop on Curated Data for Efficient Learning." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://curateddata.github.io/papers.html" />
+<meta property="og:image" content="https://curateddata.github.io/assets/img/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Accepted Papers · Curated Data for Efficient Learning: ECCV 2026" />
+<meta name="twitter:image" content="https://curateddata.github.io/assets/img/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<script>
+  // Set theme as early as possible to avoid flash.
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var dark = saved ? saved === 'dark' : prefersDark;
+    if (dark) document.documentElement.classList.add('dark');
+  })();
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        fontFamily: {
+          serif: ['"Instrument Serif"', 'ui-serif', 'Georgia', 'serif'],
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+        },
+        colors: {
+          bg: 'rgb(var(--bg) / <alpha-value>)',
+          surface: 'rgb(var(--surface) / <alpha-value>)',
+          ink: 'rgb(var(--ink) / <alpha-value>)',
+          muted: 'rgb(var(--muted) / <alpha-value>)',
+          line: 'rgb(var(--line) / <alpha-value>)',
+          a1: 'rgb(var(--a1) / <alpha-value>)',
+          a2: 'rgb(var(--a2) / <alpha-value>)',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root {
+    --bg: 248 245 238; --surface: 255 255 255; --ink: 22 21 28;
+    --muted: 90 88 98; --line: 216 211 200; --a1: 227 80 47; --a2: 58 47 124;
+  }
+  .dark {
+    --bg: 10 9 16; --surface: 19 18 26; --ink: 245 243 235;
+    --muted: 140 137 151; --line: 34 32 44; --a1: 255 111 77; --a2: 159 134 255;
+  }
+
+  html, body { background: rgb(var(--bg)); color: rgb(var(--ink)); }
+  body { font-family: 'Inter', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+  .eyebrow {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgb(var(--muted));
+  }
+  .section-title {
+    font-family: 'Instrument Serif', serif; font-weight: 400;
+    line-height: 1.02; letter-spacing: -0.01em;
+  }
+  .nav-glass {
+    background: rgb(var(--bg) / 0.72);
+    backdrop-filter: saturate(140%) blur(12px);
+    -webkit-backdrop-filter: saturate(140%) blur(12px);
+    border-bottom: 1px solid rgb(var(--line));
+  }
+  .data-rule {
+    height: 1px;
+    background-image: radial-gradient(circle at 1px 50%, rgb(var(--line)) 1px, transparent 1.5px);
+    background-size: 8px 1px; background-repeat: repeat-x;
+  }
+
+  /* Controls */
+  .search {
+    width: 100%; background: transparent; border: 1px solid rgb(var(--line));
+    border-radius: 9999px; padding: 11px 18px; color: rgb(var(--ink));
+    font-size: 15px; outline: none;
+  }
+  .search:focus { border-color: rgb(var(--a1) / 0.6); }
+  .search::placeholder { color: rgb(var(--muted)); }
+  .chip {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 7px 14px; border-radius: 9999px; border: 1px solid rgb(var(--line));
+    color: rgb(var(--muted)); background: transparent; cursor: pointer;
+    transition: border-color .2s, color .2s;
+  }
+  .chip:hover { border-color: rgb(var(--ink) / 0.5); color: rgb(var(--ink)); }
+  .chip[aria-pressed="true"] {
+    border-color: rgb(var(--a1) / 0.5); color: rgb(var(--a1)); background: rgb(var(--a1) / 0.08);
+  }
+
+  /* Section groups */
+  .grp[hidden] { display: none; }
+  .grp + .grp { margin-top: 72px; }
+  .grp-head { padding-bottom: 6px; }
+  .grp-title {
+    font-family: 'Instrument Serif', Georgia, serif; font-size: 34px;
+    line-height: 1.1; letter-spacing: -0.01em;
+  }
+
+  /* Paper cards */
+  .card {
+    padding: 26px 0; border-top: 1px solid rgb(var(--line));
+  }
+  .card[hidden] { display: none; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .tag {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 9999px;
+    border: 1px solid rgb(var(--line)); color: rgb(var(--muted));
+  }
+  .tag-oral {
+    border-color: rgb(var(--a1) / 0.45); color: rgb(var(--a1)); background: rgb(var(--a1) / 0.08);
+  }
+  .ttl {
+    font-family: 'Instrument Serif', Georgia, serif; font-size: 25px;
+    line-height: 1.18; letter-spacing: -0.01em;
+  }
+  .ttl a:hover { color: rgb(var(--a1)); }
+  .authors { font-size: 14px; color: rgb(var(--muted)); margin-top: 7px; }
+  .links {
+    display: flex; flex-wrap: wrap; gap: 18px; margin-top: 14px;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .links a, .bib-btn { color: rgb(var(--muted)); transition: color .2s; }
+  .links a:hover, .bib-btn:hover { color: rgb(var(--a1)); }
+  .bib-btn {
+    background: none; border: 0; padding: 0; cursor: pointer;
+    font: inherit; letter-spacing: inherit; text-transform: inherit;
+  }
+
+  .reveal { opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+</style>
+</head>
+
+<body class="bg-bg text-ink">
+
+<!-- Top nav -->
+<header class="fixed top-0 inset-x-0 z-40 nav-glass">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3 group">
+      <span class="relative inline-flex w-7 h-7 items-center justify-center">
+        <span class="absolute inset-0 rounded-full bg-a1/20 blur-[6px]"></span>
+        <span class="relative w-2 h-2 rounded-full bg-a1"></span>
+        <span class="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-a2"></span>
+        <span class="absolute bottom-0 left-0 w-1 h-1 rounded-full bg-ink/60"></span>
+      </span>
+      <span class="font-mono text-[11px] tracking-[0.18em] uppercase text-muted group-hover:text-ink transition-colors"><span class="hidden sm:inline">CDEL · ECCV 26</span><span class="sm:hidden">CDEL</span></span>
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-7 text-sm">
+      <a href="index.html#overview" class="text-muted hover:text-ink transition-colors">Overview</a>
+      <a href="papers.html" class="text-ink transition-colors">Papers</a>
+      <a href="index.html#cfp" class="text-muted hover:text-ink transition-colors">Call for Papers</a>
+      <a href="index.html#dates" class="text-muted hover:text-ink transition-colors">Dates</a>
+      <a href="index.html#speakers" class="text-muted hover:text-ink transition-colors">Speakers</a>
+      <a href="schedule.html" class="text-muted hover:text-ink transition-colors">Schedule</a>
+      <a href="index.html#organizers" class="text-muted hover:text-ink transition-colors">Organizers</a>
+      <a href="iccv2025/" class="text-muted hover:text-ink transition-colors">ICCV&nbsp;2025 ↗</a>
+    </nav>
+
+    <div class="flex items-center gap-2 sm:gap-3">
+    <button id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden relative inline-flex w-9 h-9 items-center justify-center rounded-full border border-line hover:border-ink/50 transition-colors">
+      <svg data-menu-icon="open" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+      <svg data-menu-icon="close" class="w-4 h-4" hidden viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18" stroke-linecap="round"/></svg>
+    </button>
+    <button id="theme-toggle" aria-label="Toggle theme" class="relative inline-flex w-9 h-9 items-center justify-center rounded-full border border-line hover:border-ink/50 transition-colors">
+      <svg class="w-4 h-4 hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/>
+      </svg>
+      <svg class="w-4 h-4 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" />
+      </svg>
+    </button>
+    </div>
+  </div>
+
+  <div id="mobile-menu" hidden class="lg:hidden border-t border-line">
+    <nav class="max-w-7xl mx-auto px-5 py-2 flex flex-col text-sm">
+      <a href="index.html#overview" class="py-2.5 text-muted hover:text-ink transition-colors">Overview</a>
+      <a href="papers.html" class="py-2.5 text-a1">Papers</a>
+      <a href="index.html#cfp" class="py-2.5 text-muted hover:text-ink transition-colors">Call for Papers</a>
+      <a href="index.html#dates" class="py-2.5 text-muted hover:text-ink transition-colors">Dates</a>
+      <a href="index.html#speakers" class="py-2.5 text-muted hover:text-ink transition-colors">Speakers</a>
+      <a href="schedule.html" class="py-2.5 text-muted hover:text-ink transition-colors">Schedule</a>
+      <a href="index.html#organizers" class="py-2.5 text-muted hover:text-ink transition-colors">Organizers</a>
+      <a href="iccv2025/" class="py-2.5 text-muted hover:text-ink transition-colors">ICCV 2025 ↗</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Page header -->
+<section class="relative pt-32 sm:pt-40">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="absolute top-16 right-0 w-72 h-72 rounded-full pointer-events-none" style="background: radial-gradient(closest-side, rgb(var(--a1) / 0.14), transparent 70%);"></div>
+    <h1 class="section-title text-5xl sm:text-7xl relative">Accepted papers.</h1>
+  </div>
+  <div class="data-rule max-w-7xl mx-auto mt-10"></div>
+</section>
+
+<!-- Papers -->
+<section class="relative">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-12 sm:py-16">
+    <div class="max-w-5xl">
+
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+        <div class="sm:flex-1">
+          <label for="q" class="sr-only">Search papers</label>
+          <input id="q" class="search" type="search" placeholder="Search title or author…" autocomplete="off" />
+        </div>
+      </div>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <button class="chip" data-filter="all" aria-pressed="true">All · 51</button>
+        <button class="chip" data-filter="oral" aria-pressed="false">Oral · 9</button>
+      </div>
+      <p id="count" class="mt-5 eyebrow" aria-live="polite">Showing all 51 papers</p>
+
+      <div id="list" class="mt-2">
+      <div class="grp" data-grp="arch">
+        <div class="grp-head">
+          <h2 class="grp-title">Archival papers</h2>
+        </div>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="0" data-s="adore: attribution-guided and distribution-constrained coreset selection for image quality assessment arpita nema, hanwei zhu, xi zhang, weisi lin">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=VKXB2D5MAw" target="_blank" rel="noopener">ADORE: Attribution-guided and Distribution-constrained Coreset Selection for Image Quality Assessment</a></h3>
+        <p class="authors">Arpita Nema, Hanwei Zhu, Xi Zhang, Weisi Lin</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=VKXB2D5MAw" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=VKXB2D5MAw" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+nema2026adore,
+title={{ADORE}: Attribution-guided and Distribution-constrained Coreset Selection for Image Quality Assessment},
+author={Arpita Nema and Hanwei Zhu and Xi Zhang and Weisi Lin},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=VKXB2D5MAw}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="1" data-media="0" data-s="agt-cv: an aerial-ground team cross-view dataset for heterogeneous robot teams in unstructured environments siwei cai, knut peterson, quan tran, christian ricks, dhanush parthasarathy, amir kaidarov, neil sandeep deshpande, sukaina najm, david k. han, lifeng zhou">
+        <div class="tags"><span class="tag tag-oral">Oral</span></div>
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=ltGoO0UkkT" target="_blank" rel="noopener">AGT-CV: An Aerial-Ground Team Cross-View Dataset for Heterogeneous Robot Teams in Unstructured Environments</a></h3>
+        <p class="authors">Siwei Cai, Knut Peterson, Quan Tran, Christian Ricks, Dhanush Parthasarathy, Amir Kaidarov, Neil Sandeep Deshpande, Sukaina Najm, David K. Han, Lifeng Zhou</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=ltGoO0UkkT" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=ltGoO0UkkT" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+cai2026agtcv,
+title={{AGT}-{CV}: An Aerial-Ground Team Cross-View Dataset for Heterogeneous Robot Teams in Unstructured Environments},
+author={Siwei Cai and Knut Peterson and Quan Tran and Christian Ricks and Dhanush Parthasarathy and Amir Kaidarov and Neil Sandeep Deshpande and Sukaina Najm and David K. Han and Lifeng Zhou},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=ltGoO0UkkT}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="algebraic multigrid acceleration for efficient label spreading antonia van betteray, jonathan klees, miriam schafers, matthias rottmann">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=nVP4jqdyF2" target="_blank" rel="noopener">Algebraic Multigrid Acceleration for Efficient Label Spreading</a></h3>
+        <p class="authors">Antonia van Betteray, Jonathan Klees, Miriam Schäfers, Matthias Rottmann</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=nVP4jqdyF2" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=nVP4jqdyF2" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-49-algebraic-multigrid-acceleration-for-efficient-l.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+betteray2026algebraic,
+title={Algebraic Multigrid Acceleration for Efficient Label Spreading},
+author={Antonia van Betteray and Jonathan Klees and Miriam Sch{\&quot;a}fers and Matthias Rottmann},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=nVP4jqdyF2}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="0" data-s="annotation-free class-incremental learning hari chandana kuchibhotla, ananth k s, vineeth n. balasubramanian">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=lROa5jHNrk" target="_blank" rel="noopener">Annotation-Free Class-Incremental Learning</a></h3>
+        <p class="authors">Hari Chandana Kuchibhotla, Ananth K S, Vineeth N. Balasubramanian</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=lROa5jHNrk" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=lROa5jHNrk" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+kuchibhotla2026annotationfree,
+title={Annotation-Free Class-Incremental Learning},
+author={Hari Chandana Kuchibhotla and Ananth K S and Vineeth N. Balasubramanian},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=lROa5jHNrk}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="1" data-media="1" data-s="babyland-72: synthetic-to-real multi-view infant facial landmark estimation jose carlos reyes hernandez">
+        <div class="tags"><span class="tag tag-oral">Oral</span></div>
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=eqWFu5CgYv" target="_blank" rel="noopener">BabyLand-72: Synthetic-to-Real Multi-View Infant Facial Landmark Estimation</a></h3>
+        <p class="authors">José Carlos Reyes Hernández</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=eqWFu5CgYv" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=eqWFu5CgYv" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-24-babyland-72-synthetic-to-real-multi-view-infant.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+hernandez2026babyland,
+title={BabyLand-72: Synthetic-to-Real Multi-View Infant Facial Landmark Estimation},
+author={JOS{\&#x27;E} CARLOS REYES HERN{\&#x27;A}NDEZ},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=eqWFu5CgYv}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="belde: building a large-scale earth-observation land-cover dataset for europe umit mert caglar, alptekin temizel">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=2IQidJjIcI" target="_blank" rel="noopener">BELDE: Building a Large-scale Earth-observation Land-cover Dataset for Europe</a></h3>
+        <p class="authors">Ümit Mert Çağlar, Alptekin Temizel</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=2IQidJjIcI" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=2IQidJjIcI" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-32-belde-building-a-large-scale-earth-observation-l.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+caglar2026belde,
+title={{BELDE}: Building a Large-scale Earth-observation Land-cover Dataset for Europe},
+author={{\&quot;U}mit Mert {\c{C}}a{\u{g}}lar and Alptekin Temizel},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=2IQidJjIcI}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="benchmarking the alignment of data-quality metrics, human judgment and land-cover segmentation performance for earth observation umit mert caglar, alptekin temizel">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=32UQhpk9Cz" target="_blank" rel="noopener">Benchmarking the Alignment of Data-Quality Metrics, Human Judgment and Land-Cover Segmentation Performance for Earth Observation</a></h3>
+        <p class="authors">Ümit Mert Çağlar, Alptekin Temizel</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=32UQhpk9Cz" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=32UQhpk9Cz" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-31-benchmarking-the-alignment-of-data-quality-metri.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+caglar2026benchmarking,
+title={Benchmarking the Alignment of Data-Quality Metrics, Human Judgment and Land-Cover Segmentation Performance for Earth Observation},
+author={{\&quot;U}mit Mert {\c{C}}a{\u{g}}lar and Alptekin Temizel},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=32UQhpk9Cz}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="0" data-s="beyond class level matching: cluster-aware dataset distillation keya patani, aditya sant, akshay malhotra, shahab hamidi-rad">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=2o4NJ4HNb0" target="_blank" rel="noopener">Beyond Class Level Matching: Cluster-aware Dataset Distillation</a></h3>
+        <p class="authors">Keya Patani, Aditya Sant, Akshay Malhotra, Shahab Hamidi-Rad</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=2o4NJ4HNb0" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=2o4NJ4HNb0" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+patani2026beyond,
+title={Beyond Class Level Matching: Cluster-aware Dataset Distillation},
+author={Keya Patani and Aditya Sant and Akshay Malhotra and Shahab Hamidi-Rad},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=2o4NJ4HNb0}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="1" data-media="1" data-s="bootstrapping a 4d lidar annotation tool from video foundation models jihun kim, hyun-kurl jang, hyemin yang, jinnyeong yang, hyeokjun kweon, kuk-jin yoon">
+        <div class="tags"><span class="tag tag-oral">Oral</span></div>
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=CCSxSvjYjO" target="_blank" rel="noopener">Bootstrapping a 4D LiDAR Annotation Tool from Video Foundation Models</a></h3>
+        <p class="authors">Jihun Kim, Hyun-Kurl Jang, Hyemin Yang, Jinnyeong Yang, Hyeokjun Kweon, Kuk-Jin Yoon</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=CCSxSvjYjO" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=CCSxSvjYjO" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-20-bootstrapping-a-4d-lidar-annotation-tool-from-vi.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+kim2026bootstrapping,
+title={Bootstrapping a 4D Li{DAR} Annotation Tool from Video Foundation Models},
+author={Jihun Kim and Hyun-Kurl Jang and Hyemin Yang and Jinnyeong Yang and Hyeokjun Kweon and Kuk-Jin Yoon},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=CCSxSvjYjO}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="buyer discovery is a data-curation problem: a position on decision-grade evidence for global b2b ai jason k. nam, sangwun lee, hyesun ryu, jisoo min, yuk juheon, tae guen lee, seong hoon jeon">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=wGmafemQny" target="_blank" rel="noopener">Buyer Discovery Is a Data-Curation Problem: A Position on Decision-Grade Evidence for Global B2B AI</a></h3>
+        <p class="authors">Jason K. Nam, SangWun Lee, Hyesun Ryu, Jisoo Min, Yuk Juheon, Tae Guen Lee, Seong Hoon Jeon</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=wGmafemQny" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=wGmafemQny" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-38-buyer-discovery-is-a-data-curation-problem-a-pos.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <a href="https://drive.google.com/file/d/11FQ2bH5h3wK7l4VwwEZfPCTHG_cSi_Ij/view?usp=drive_link" target="_blank" rel="noopener">Video ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+nam2026buyer,
+title={Buyer Discovery Is a Data-Curation Problem: A Position on Decision-Grade Evidence for Global B2B {AI}},
+author={Jason K. Nam and SangWun Lee and Hyesun Ryu and Jisoo Min and YUK JUHEON and Tae Guen Lee and Seong Hoon Jeon},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=wGmafemQny}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="0" data-s="cachemaml: cache-first support-query adaptation with frozen molecular transformers ziyu zhai, juntao yu">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=kRyR2NfBXe" target="_blank" rel="noopener">CacheMAML: Cache-First Support-Query Adaptation with Frozen Molecular Transformers</a></h3>
+        <p class="authors">Ziyu Zhai, Juntao Yu</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=kRyR2NfBXe" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=kRyR2NfBXe" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+zhai2026cachemaml,
+title={Cache{MAML}: Cache-First Support-Query Adaptation with Frozen Molecular Transformers},
+author={Ziyu Zhai and Juntao Yu},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=kRyR2NfBXe}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="0" data-s="cast: closed-form analytic semantic transfer for zero-shot classifier extension william heyden, habib ullah, muhammad salman siddiqui, fadi al machot">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=bOWumBD82Y" target="_blank" rel="noopener">CAST: Closed-form Analytic Semantic Transfer for Zero-Shot Classifier Extension</a></h3>
+        <p class="authors">William Heyden, Habib Ullah, Muhammad salman siddiqui, Fadi Al Machot</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=bOWumBD82Y" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=bOWumBD82Y" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+heyden2026cast,
+title={{CAST}: Closed-form Analytic Semantic Transfer for Zero-Shot Classifier Extension},
+author={William Heyden and Habib Ullah and Muhammad salman siddiqui and Fadi Al Machot},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=bOWumBD82Y}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="1" data-media="1" data-s="comprehension of multilingual expressions referring to target objects in visual inputs francisco reis nogueira, alexandre bernardino, bruno martins">
+        <div class="tags"><span class="tag tag-oral">Oral</span></div>
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=EzyWtI2Ts4" target="_blank" rel="noopener">Comprehension of Multilingual Expressions Referring to Target Objects in Visual Inputs</a></h3>
+        <p class="authors">Francisco Reis Nogueira, Alexandre Bernardino, Bruno Martins</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=EzyWtI2Ts4" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=EzyWtI2Ts4" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-52-comprehension-of-multilingual-expressions-referr.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+nogueira2026comprehension,
+title={Comprehension of Multilingual Expressions Referring to Target Objects in Visual Inputs},
+author={Francisco Reis Nogueira and Alexandre Bernardino and Bruno Martins},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=EzyWtI2Ts4}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="1" data-media="1" data-s="compression-aware dataset distillation: towards resource-efficient synthetic data generation lucas haug, shirin salehi, anke schmeink">
+        <div class="tags"><span class="tag tag-oral">Oral</span></div>
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=zpBwKaJsAx" target="_blank" rel="noopener">Compression-Aware Dataset Distillation: Towards Resource-Efficient Synthetic Data Generation</a></h3>
+        <p class="authors">Lucas Haug, Shirin Salehi, Anke Schmeink</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=zpBwKaJsAx" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=zpBwKaJsAx" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="https://youtu.be/3HCxKBPPmAU" target="_blank" rel="noopener">Video ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+haug2026compressionaware,
+title={Compression-Aware Dataset Distillation: Towards Resource-Efficient Synthetic Data Generation},
+author={Lucas Haug and Shirin Salehi and Anke Schmeink},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=zpBwKaJsAx}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="0" data-s="curating same-family neural networks for llm-guided model improvement: a controlled case study kabir dev paul baghel, radu timofte, dmitry ignatov">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=zwC7oa5O5e" target="_blank" rel="noopener">Curating Same-Family Neural Networks for LLM-Guided Model Improvement: A Controlled Case Study</a></h3>
+        <p class="authors">Kabir Dev Paul Baghel, Radu Timofte, Dmitry Ignatov</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=zwC7oa5O5e" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=zwC7oa5O5e" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+baghel2026curating,
+title={Curating Same-Family Neural Networks for {LLM}-Guided Model Improvement: A Controlled Case Study},
+author={Kabir Dev Paul Baghel and Radu Timofte and Dmitry Ignatov},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=zwC7oa5O5e}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="0" data-s="curating the damaged and cluttered reality: generative and physics-enabled simulation for sim-to-real warehouse perception mohammad ani, utsav rai, francesco lupo, chloe kim, andrea mirabile">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=avocTN5SBO" target="_blank" rel="noopener">Curating the Damaged and Cluttered Reality: Generative and Physics-Enabled Simulation for Sim-to-Real Warehouse Perception</a></h3>
+        <p class="authors">Mohammad Ani, Utsav Rai, Francesco Lupo, Chloe Kim, Andrea Mirabile</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=avocTN5SBO" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=avocTN5SBO" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+ani2026curating,
+title={Curating the Damaged and Cluttered Reality: Generative and Physics-Enabled Simulation for Sim-to-Real Warehouse Perception},
+author={Mohammad Ani and Utsav Rai and Francesco Lupo and Chloe Kim and Andrea Mirabile},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=avocTN5SBO}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="data-pruning scores break under distribution shif vadim tynchenko, aleksei borodulin, vladislav kukartsev, sergei olegovich kurashkin">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=qhsdLlv3nN" target="_blank" rel="noopener">Data-Pruning Scores Break Under Distribution Shif</a></h3>
+        <p class="authors">Vadim Tynchenko, Aleksei Borodulin, Vladislav Kukartsev, Sergei Olegovich Kurashkin</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=qhsdLlv3nN" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=qhsdLlv3nN" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-13-data-pruning-scores-break-under-distribution-shi.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <a href="https://drive.google.com/file/d/1O4Q-jCDweKs_UlP3TvsE4NDVAqB8LwMl/view?usp=sharing" target="_blank" rel="noopener">Video ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+tynchenko2026datapruning,
+title={Data-Pruning Scores Break Under Distribution Shif},
+author={Vadim Tynchenko and Aleksei Borodulin and Vladislav Kukartsev and Sergei Olegovich Kurashkin},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=qhsdLlv3nN}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="do foundation models earn their labels? small-data biophysical parameter regression under geographic shift sergei olegovich kurashkin, vadim tynchenko, vladimir bukhtoyarov, aleksei borodulin">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=i9QFxjgS5j" target="_blank" rel="noopener">Do Foundation Models Earn Their Labels? Small-Data Biophysical Parameter Regression Under Geographic Shift</a></h3>
+        <p class="authors">Sergei Olegovich Kurashkin, Vadim Tynchenko, Vladimir Bukhtoyarov, Aleksei Borodulin</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=i9QFxjgS5j" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=i9QFxjgS5j" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-12-do-foundation-models-earn-their-labels-small-dat.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+kurashkin2026do,
+title={Do Foundation Models Earn Their Labels? Small-Data Biophysical Parameter Regression Under Geographic Shift},
+author={Sergei Olegovich Kurashkin and Vadim Tynchenko and Vladimir Bukhtoyarov and Aleksei Borodulin},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=i9QFxjgS5j}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="generating large-scale segmentation data from sparse annotations using 3d reconstruction and gaussian splatting lorenz krefft, ludwig hoegner, cornelius preidel">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=VnBQOY68qe" target="_blank" rel="noopener">Generating Large-Scale Segmentation Data from Sparse Annotations using 3D Reconstruction and Gaussian Splatting</a></h3>
+        <p class="authors">Lorenz Krefft, Ludwig Hoegner, Cornelius Preidel</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=VnBQOY68qe" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=VnBQOY68qe" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-01-generating-large-scale-segmentation-data-from-sp.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+krefft2026generating,
+title={Generating Large-Scale Segmentation Data from Sparse Annotations using 3D Reconstruction and Gaussian Splatting},
+author={Lorenz Krefft and Ludwig Hoegner and Cornelius Preidel},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=VnBQOY68qe}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="havada: heterogeneous audio and vision adaptation for video saliency prediction qi bi, remco veltkamp, albert ali salah">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=aoqeAi4mGC" target="_blank" rel="noopener">HAVADA: Heterogeneous Audio and Vision Adaptation for Video Saliency Prediction</a></h3>
+        <p class="authors">Qi Bi, Remco Veltkamp, Albert Ali Salah</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=aoqeAi4mGC" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=aoqeAi4mGC" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-08-havada-heterogeneous-audio-and-vision-adaptation.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+bi2026havada,
+title={{HAVADA}: Heterogeneous Audio and Vision Adaptation for Video Saliency Prediction},
+author={Qi Bi and Remco Veltkamp and Albert Ali Salah},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=aoqeAi4mGC}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="impact of iterative fine-tuning on transcription accuracy in complex historical sanskrit manuscripts kartik chincholikar, kaushik gopalan, mihir hasabnis">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=uaW2R4cjK9" target="_blank" rel="noopener">Impact of Iterative Fine-Tuning on Transcription Accuracy in Complex Historical Sanskrit Manuscripts</a></h3>
+        <p class="authors">Kartik Chincholikar, Kaushik Gopalan, Mihir Hasabnis</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=uaW2R4cjK9" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=uaW2R4cjK9" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="https://youtu.be/k0AdL5W2j2E" target="_blank" rel="noopener">Video ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+chincholikar2026impact,
+title={Impact of Iterative Fine-Tuning on Transcription Accuracy in Complex Historical Sanskrit Manuscripts},
+author={Kartik Chincholikar and Kaushik Gopalan and Mihir Hasabnis},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=uaW2R4cjK9}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="jbdata --- a collaborative framework for automatic curation and creation of a dataset for ai functions in autonomous driving azarm nowzad, michael schotz, hendrik konigshof, robert aufschlager, fabian bally, daniel bogdoll, marc heinrich, wencan huang, dinish k karunakaran, erwin kraft, rupert polley, philipp reis, kevin rosch, christian schlauch, martina katharina scholl, philip schorner, christina sigl, torsten stiehm, peter szabados, stefan weber, yue yao, tobias zajusch, nadja klein">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=Z0kvtOVFE0" target="_blank" rel="noopener">jbDATA --- A Collaborative Framework for Automatic Curation and Creation of a Dataset for AI Functions in Autonomous Driving</a></h3>
+        <p class="authors">Azarm Nowzad, Michael Schötz, Hendrik Königshof, Robert Aufschläger, Fabian Bally, Daniel Bogdoll, Marc Heinrich, Wencan Huang, Dinish K Karunakaran, Erwin Kraft, Rupert Polley, Philipp Reis, Kevin Rösch, Christian Schlauch, Martina Katharina Schöll, Philip Schörner, Christina Sigl, Torsten Stiehm, Peter Szabados, Stefan Weber, Yue Yao, Tobias Zajusch, Nadja Klein</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=Z0kvtOVFE0" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=Z0kvtOVFE0" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-25-jbdata-a-collaborative-framework-for-automatic-c.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+nowzad2026jbdata,
+title={jb{DATA} --- A Collaborative Framework for Automatic Curation and Creation of a Dataset for {AI} Functions in Autonomous Driving},
+author={Azarm Nowzad and Michael Sch{\&quot;o}tz and Hendrik K{\&quot;o}nigshof and Robert Aufschl{\&quot;a}ger and Fabian Bally and Daniel Bogdoll and Marc Heinrich and Wencan Huang and Dinish K Karunakaran and Erwin Kraft and Rupert Polley and Philipp Reis and Kevin R{\&quot;o}sch and Christian Schlauch and Martina Katharina Sch{\&quot;o}ll and Philip Sch{\&quot;o}rner and Christina Sigl and Torsten Stiehm and Peter Szabados and Stefan Weber and Yue Yao and Tobias Zajusch and Nadja Klein},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=Z0kvtOVFE0}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="learning from disagreement haaroon afroz ognawala, david tschirschwitz, claudio jung, volker rodehorst">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=UDF9tTy7je" target="_blank" rel="noopener">Learning from Disagreement</a></h3>
+        <p class="authors">Haaroon Afroz Ognawala, David Tschirschwitz, Claudio Jung, Volker Rodehorst</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=UDF9tTy7je" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=UDF9tTy7je" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-07-learning-from-disagreement.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+ognawala2026learning,
+title={Learning from Disagreement},
+author={Haaroon Afroz Ognawala and David Tschirschwitz and Claudio Jung and Volker Rodehorst},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=UDF9tTy7je}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="0" data-s="medcurate-bench: auditing the diagnostic validity of curated medical image datasets sarthak pandey, shreshth rai, seifedine kadry">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=wrQwEo2loQ" target="_blank" rel="noopener">MedCurate-Bench: Auditing the Diagnostic Validity of Curated Medical Image Datasets</a></h3>
+        <p class="authors">Sarthak Pandey, Shreshth Rai, Seifedine Kadry</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=wrQwEo2loQ" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=wrQwEo2loQ" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+pandey2026medcuratebench,
+title={MedCurate-Bench: Auditing the Diagnostic Validity of Curated Medical Image Datasets},
+author={Sarthak Pandey and Shreshth Rai and Seifedine Kadry},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=wrQwEo2loQ}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="pgcgan: pathological gait-conditioned gan for human gait synthesis mritula chandrasekaran, sanket kachole, jarek francik, dimitrios makris">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=Ph8bWNEE6D" target="_blank" rel="noopener">PGcGAN: Pathological Gait-Conditioned GAN for Human Gait Synthesis</a></h3>
+        <p class="authors">Mritula Chandrasekaran, sanket kachole, Jarek Francik, Dimitrios Makris</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=Ph8bWNEE6D" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=Ph8bWNEE6D" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-26-pgcgan-pathological-gait-conditioned-gan-for-hum.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+chandrasekaran2026pgcgan,
+title={{PG}c{GAN}: Pathological Gait-Conditioned {GAN} for Human Gait Synthesis},
+author={Mritula Chandrasekaran and sanket kachole and Jarek Francik and Dimitrios Makris},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=Ph8bWNEE6D}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="realdiff: real-world 3d shape completion using self-supervised diffusion models basak melis ocal, maxim tatarchenko, sezer karaoglu, theo gevers">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=XjDB7whdzh" target="_blank" rel="noopener">RealDiff: Real-world 3D Shape Completion using Self-Supervised Diffusion Models</a></h3>
+        <p class="authors">Başak Melis Öcal, Maxim Tatarchenko, Sezer Karaoglu, Theo Gevers</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=XjDB7whdzh" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=XjDB7whdzh" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-44-realdiff-real-world-3d-shape-completion-using-se.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+ocal2026realdiff,
+title={RealDiff: Real-world 3D Shape Completion using Self-Supervised Diffusion Models},
+author={Ba{\c{s}}ak Melis {\&quot;O}cal and Maxim Tatarchenko and Sezer Karaoglu and Theo Gevers},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=XjDB7whdzh}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="0" data-s="scratchsim: a procedural synthetic data pipeline for surface scratch detection paul julius kuhn, saptarshi neil sinha, tiago kleist, richard hoffmann, arjan kuijper, michael weinmann">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=KoAYTOJj5L" target="_blank" rel="noopener">ScratchSim: A Procedural Synthetic Data Pipeline for Surface Scratch Detection</a></h3>
+        <p class="authors">Paul Julius Kühn, Saptarshi Neil Sinha, Tiago Kleist, Richard Hoffmann, Arjan Kuijper, Michael Weinmann</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=KoAYTOJj5L" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=KoAYTOJj5L" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+kuhn2026scratchsim,
+title={ScratchSim: A Procedural Synthetic Data Pipeline for Surface Scratch Detection},
+author={Paul Julius K{\&quot;u}hn and Saptarshi Neil Sinha and Tiago Kleist and Richard Hoffmann and Arjan Kuijper and Michael Weinmann},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=KoAYTOJj5L}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="0" data-s="semantic synthesis over brute-force search: llm-guided transformation design for efficient learning usha shrestha, radu timofte, dmitry ignatov">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=YkPL76vhIm" target="_blank" rel="noopener">Semantic Synthesis Over Brute-Force Search: LLM-Guided Transformation Design for Efficient Learning</a></h3>
+        <p class="authors">Usha Shrestha, Radu Timofte, Dmitry Ignatov</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=YkPL76vhIm" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=YkPL76vhIm" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+shrestha2026semantic,
+title={Semantic Synthesis Over Brute-Force Search: {LLM}-Guided Transformation Design for Efficient Learning},
+author={Usha Shrestha and Radu Timofte and Dmitry Ignatov},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=YkPL76vhIm}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="1" data-media="0" data-s="speed-variation distillation for generative modeling sukit seripanitkarn, phonphrm thawatdamrongkit, supasorn suwajanakorn">
+        <div class="tags"><span class="tag tag-oral">Oral</span></div>
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=90YktLKCc0" target="_blank" rel="noopener">Speed-Variation Distillation for Generative Modeling</a></h3>
+        <p class="authors">Sukit Seripanitkarn, Phonphrm Thawatdamrongkit, Supasorn Suwajanakorn</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=90YktLKCc0" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=90YktLKCc0" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+seripanitkarn2026speedvariation,
+title={Speed-Variation Distillation for Generative Modeling},
+author={Sukit Seripanitkarn and Phonphrm Thawatdamrongkit and Supasorn Suwajanakorn},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=90YktLKCc0}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="0" data-s="synthetic data generation using grapheme-level visual units for handwritten text recognition of grantha manuscripts shagun dwivedi, kaushik gopalan">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=ZrDXEV8LJE" target="_blank" rel="noopener">Synthetic Data Generation using Grapheme-level Visual Units for Handwritten Text Recognition of Grantha Manuscripts</a></h3>
+        <p class="authors">Shagun Dwivedi, Kaushik Gopalan</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=ZrDXEV8LJE" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=ZrDXEV8LJE" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+dwivedi2026synthetic,
+title={Synthetic Data Generation using Grapheme-level Visual Units for Handwritten Text Recognition of Grantha Manuscripts},
+author={Shagun Dwivedi and Kaushik Gopalan},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=ZrDXEV8LJE}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="the reversal ratio is an optimisation artefact: matched-step evaluation of synthetic data augmentation vladimir nelyub, vadim tynchenko, aleksei borodulin, ahmad hammoud, sergei olegovich kurashkin">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=NXqkGwEyVn" target="_blank" rel="noopener">The Reversal Ratio Is an Optimisation Artefact: Matched-Step Evaluation of Synthetic Data Augmentation</a></h3>
+        <p class="authors">Vladimir Nelyub, Vadim Tynchenko, Aleksei Borodulin, Ahmad Hammoud, Sergei Olegovich Kurashkin</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=NXqkGwEyVn" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=NXqkGwEyVn" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-14-the-reversal-ratio-is-an-optimisation-artefact-m.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+nelyub2026the,
+title={The Reversal Ratio Is an Optimisation Artefact: Matched-Step Evaluation of Synthetic Data Augmentation},
+author={Vladimir Nelyub and Vadim Tynchenko and Aleksei Borodulin and Ahmad Hammoud and Sergei Olegovich Kurashkin},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=NXqkGwEyVn}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="0" data-s="training visual generative model using a data attribution method for object detection tasks gyuseong lee, soohyun kim, jihyun kim, hoseok do">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=MdptVM7Ncp" target="_blank" rel="noopener">Training Visual Generative Model Using a Data Attribution Method for Object Detection Tasks</a></h3>
+        <p class="authors">Gyuseong Lee, Soohyun Kim, Jihyun Kim, Hoseok Do</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=MdptVM7Ncp" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=MdptVM7Ncp" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+lee2026training,
+title={Training Visual Generative Model Using a Data Attribution Method for Object Detection Tasks},
+author={Gyuseong Lee and Soohyun Kim and Jihyun Kim and Hoseok Do},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=MdptVM7Ncp}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="0" data-s="when agreement is not enough: a selection bottleneck in non-verifiable reasoning shreshth rai, sarthak pandey, seifedine kadry">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=pKE7nlerfV" target="_blank" rel="noopener">When Agreement Is Not Enough: A Selection Bottleneck in Non-Verifiable Reasoning</a></h3>
+        <p class="authors">Shreshth Rai, Sarthak Pandey, Seifedine Kadry</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=pKE7nlerfV" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=pKE7nlerfV" target="_blank" rel="noopener">PDF ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+rai2026when,
+title={When Agreement Is Not Enough: A Selection Bottleneck in Non-Verifiable Reasoning},
+author={Shreshth Rai and Sarthak Pandey and Seifedine Kadry},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=pKE7nlerfV}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      <article class="card reveal" data-arch="1" data-oral="0" data-media="1" data-s="when auxiliary cues fail: a data-centric study of clean-to-stressed generalization in battlefield infrared imagery noyon dey, nasid habib barna, suchendra m. bhandarkar">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=uF8BX8OQDT" target="_blank" rel="noopener">When Auxiliary Cues Fail: A Data-Centric Study of Clean-to-Stressed Generalization in Battlefield Infrared Imagery</a></h3>
+        <p class="authors">Noyon Dey, Nasid Habib Barna, Suchendra M. Bhandarkar</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=uF8BX8OQDT" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=uF8BX8OQDT" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-35-when-auxiliary-cues-fail-a-data-centric-study-of.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <button class="bib-btn" type="button" data-bib="@inproceedings{
+dey2026when,
+title={When Auxiliary Cues Fail: A Data-Centric Study of Clean-to-Stressed Generalization in Battlefield Infrared Imagery},
+author={Noyon Dey and Nasid Habib Barna and Suchendra M. Bhandarkar},
+booktitle={Second Workshop on Curated Data for Efficient Learning (CDEL), ECCV 2026},
+year={2026},
+url={https://openreview.net/forum?id=uF8BX8OQDT}
+}">Copy BibTeX</button>
+        </div>
+      </article>
+      </div>
+      <div class="grp" data-grp="nonarch">
+        <div class="grp-head">
+          <h2 class="grp-title">Non-archival papers</h2>
+        </div>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="1" data-s="attention transfer is not universally effective for vision transformers huaiyuan qin, muli yang, gabriel james goenawan, hongyuan zhu">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=cQsBg8itsZ" target="_blank" rel="noopener">Attention Transfer Is Not Universally Effective for Vision Transformers</a></h3>
+        <p class="authors">Huaiyuan Qin, Muli Yang, Gabriel James Goenawan, Hongyuan Zhu</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=cQsBg8itsZ" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=cQsBg8itsZ" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-06-attention-transfer-is-not-universally-effective.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="0" data-s="auditing what pseudo-label policies actually change under domain shift jun hyung lee, soonyoung jung">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=BwsHqrPJkc" target="_blank" rel="noopener">Auditing What Pseudo-Label Policies Actually Change under Domain Shift</a></h3>
+        <p class="authors">Jun Hyung Lee, Soonyoung Jung</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=BwsHqrPJkc" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=BwsHqrPJkc" target="_blank" rel="noopener">PDF ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="1" data-s="beyond loss values: robust dynamic pruning via loss trajectory alignment huaiyuan qin, muli yang, gabriel james goenawan, hongyuan zhu">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=OpgOw9PROt" target="_blank" rel="noopener">Beyond Loss Values: Robust Dynamic Pruning via Loss Trajectory Alignment</a></h3>
+        <p class="authors">Huaiyuan Qin, Muli Yang, Gabriel James Goenawan, Hongyuan Zhu</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=OpgOw9PROt" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=OpgOw9PROt" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-05-beyond-loss-values-robust-dynamic-pruning-via-lo.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="1" data-media="0" data-s="camouflaged objects cannot hide – we can see through and localize noman saffat sajid, mahbubur rahman khan, md. shahriar karim">
+        <div class="tags"><span class="tag tag-oral">Oral</span></div>
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=j0M3WP4tUD" target="_blank" rel="noopener">Camouflaged Objects Cannot Hide – We Can See Through and Localize</a></h3>
+        <p class="authors">Noman Saffat Sajid, Mahbubur Rahman Khan, Md. Shahriar Karim</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=j0M3WP4tUD" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=j0M3WP4tUD" target="_blank" rel="noopener">PDF ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="1" data-s="context-memorized dataset distillation for length-robust sensor-grounded summarization jason k. nam">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=9yZY9dSzt9" target="_blank" rel="noopener">Context-Memorized Dataset Distillation for Length-Robust Sensor-Grounded Summarization</a></h3>
+        <p class="authors">Jason K. Nam</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=9yZY9dSzt9" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=9yZY9dSzt9" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-34-context-memorized-dataset-distillation-for-lengt.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <a href="https://drive.google.com/file/d/14VTsjyg3g3G93KAIddqj3uaZG7iWz0uS/view?usp=drive_link" target="_blank" rel="noopener">Video ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="1" data-media="1" data-s="data agent: learning to select data via end-to-end dynamic optimization suorong yang, fangjian su, hai gan, ziqi ye, jie li, baile xu, furao shen, soujanya poria">
+        <div class="tags"><span class="tag tag-oral">Oral</span></div>
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=0Mms9xiskR" target="_blank" rel="noopener">Data Agent: Learning to Select Data via End-to-End Dynamic Optimization</a></h3>
+        <p class="authors">Suorong Yang, Fangjian Su, Hai Gan, Ziqi Ye, Jie Li, Baile Xu, Furao Shen, Soujanya Poria</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=0Mms9xiskR" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=0Mms9xiskR" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-04-data-agent-learning-to-select-data-via-end-to-en.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="1" data-media="1" data-s="diffuse the object, keep its label: curating detector training data from a few unlabeled photographs via vlm-built 3d vegetation scenes mario malizia, marnix enting, rob haelterman, ken hasselmann">
+        <div class="tags"><span class="tag tag-oral">Oral</span></div>
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=LJkdStldTL" target="_blank" rel="noopener">Diffuse the object, keep its label: curating detector training data from a few unlabeled photographs via VLM-built 3D vegetation scenes</a></h3>
+        <p class="authors">Mario Malizia, Marnix Enting, Rob Haelterman, Ken Hasselmann</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=LJkdStldTL" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=LJkdStldTL" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-15-diffuse-the-object-keep-its-label-curating-detec.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="0" data-s="flame: adaptive mixture-of-experts for continual multimodal multi-task learning xing han, shravan s chaudhari, tanvi ranade, rama chellappa, suchi saria">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=RGD7qsTO2G" target="_blank" rel="noopener">FLAME: Adaptive Mixture-of-Experts for Continual Multimodal Multi-Task Learning</a></h3>
+        <p class="authors">Xing Han, Shravan S Chaudhari, Tanvi Ranade, Rama Chellappa, Suchi Saria</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=RGD7qsTO2G" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=RGD7qsTO2G" target="_blank" rel="noopener">PDF ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="1" data-s="grounding synthetic data generation with vision and language models umit mert caglar, alptekin temizel">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=vdPvq3WNHe" target="_blank" rel="noopener">Grounding Synthetic Data Generation With Vision and Language Models</a></h3>
+        <p class="authors">Ümit Mert Çağlar, Alptekin Temizel</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=vdPvq3WNHe" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=vdPvq3WNHe" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-16-grounding-synthetic-data-generation-with-vision.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="0" data-s="leakage-free cross-dataset crowd counting for stm32n6 deployment abdelgader m. abdalla">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=5FlhUtGfMX" target="_blank" rel="noopener">Leakage-Free Cross-Dataset Crowd Counting for STM32N6 Deployment</a></h3>
+        <p class="authors">Abdelgader M. Abdalla</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=5FlhUtGfMX" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=5FlhUtGfMX" target="_blank" rel="noopener">PDF ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="0" data-s="learning cultural vectors for cross-cultural generation sina malakouti, deepti ghadiyaram, boqing gong, adriana kovashka">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=kddI8nmqoW" target="_blank" rel="noopener">Learning Cultural Vectors for Cross-Cultural Generation</a></h3>
+        <p class="authors">Sina Malakouti, Deepti Ghadiyaram, Boqing Gong, Adriana Kovashka</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=kddI8nmqoW" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=kddI8nmqoW" target="_blank" rel="noopener">PDF ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="0" data-s="open-vocabulary annotation for pedestrian scene datasets under domain shift justine buss, seyed eghbal ghobadi, michael kreutzer">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=EpDJktEzkQ" target="_blank" rel="noopener">Open-Vocabulary Annotation for Pedestrian Scene Datasets under Domain Shift</a></h3>
+        <p class="authors">Justine Buss, Seyed Eghbal Ghobadi, Michael Kreutzer</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=EpDJktEzkQ" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=EpDJktEzkQ" target="_blank" rel="noopener">PDF ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="1" data-s="rank-aware hyperbolic alignment for vision-language dataset distillation jongoh jeong, sun-kyung lee, kuk-jin yoon">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=oEJBP5W0uM" target="_blank" rel="noopener">Rank-Aware Hyperbolic Alignment for Vision-Language Dataset Distillation</a></h3>
+        <p class="authors">Jongoh Jeong, Sun-Kyung Lee, Kuk-Jin Yoon</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=oEJBP5W0uM" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=oEJBP5W0uM" target="_blank" rel="noopener">PDF ↗</a>
+          <a href="assets/posters/cdel2026-10-rank-aware-hyperbolic-alignment-for-vision-langu.pdf" target="_blank" rel="noopener">Poster ↗</a>
+          <a href="https://www.youtube.com/watch?v=AA8olKNIZEU" target="_blank" rel="noopener">Video ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="0" data-s="rethinking dataset distillation for classification: do distilled sets outperform coresets? trisha mittal, akshay mehra, joshua kimball">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=XF3K2BdJ2o" target="_blank" rel="noopener">Rethinking Dataset Distillation for Classification: Do Distilled Sets Outperform Coresets?</a></h3>
+        <p class="authors">Trisha Mittal, Akshay Mehra, Joshua Kimball</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=XF3K2BdJ2o" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=XF3K2BdJ2o" target="_blank" rel="noopener">PDF ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="0" data-s="scln-det: auditing suggestion-conditioned label noise in model-in-the-loop object detection annotation jie shao">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=FlV8ZCa3VK" target="_blank" rel="noopener">SCLN-Det: Auditing Suggestion-Conditioned Label Noise in Model-in-the-Loop Object Detection Annotation</a></h3>
+        <p class="authors">Jie Shao</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=FlV8ZCa3VK" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=FlV8ZCa3VK" target="_blank" rel="noopener">PDF ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="0" data-s="trajectory design and budgeted querying for digital twin calibration vladyslava spitkovska, dmytro kuzmenko">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=iYGR8UMn9A" target="_blank" rel="noopener">Trajectory Design and Budgeted Querying for Digital Twin Calibration</a></h3>
+        <p class="authors">Vladyslava Spitkovska, Dmytro Kuzmenko</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=iYGR8UMn9A" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=iYGR8UMn9A" target="_blank" rel="noopener">PDF ↗</a>
+          
+        </div>
+      </article>
+      <article class="card reveal" data-arch="0" data-oral="0" data-media="0" data-s="when dynamic data selection meets data augmentation: achieving enhanced training acceleration suorong yang, peng ye, furao shen, dongzhan zhou">
+        <h3 class="ttl"><a href="https://openreview.net/forum?id=EnVKlbJkcA" target="_blank" rel="noopener">When Dynamic Data Selection Meets Data Augmentation: Achieving Enhanced Training Acceleration</a></h3>
+        <p class="authors">Suorong Yang, Peng Ye, Furao Shen, Dongzhan Zhou</p>
+        <div class="links">
+          <a href="https://openreview.net/forum?id=EnVKlbJkcA" target="_blank" rel="noopener">OpenReview ↗</a>
+          <a href="https://openreview.net/pdf?id=EnVKlbJkcA" target="_blank" rel="noopener">PDF ↗</a>
+          
+        </div>
+      </article>
+      </div>
+      </div>
+
+      <p id="empty" hidden class="py-16 font-serif text-2xl text-muted">No papers match that search.</p>
+    </div>
+  </div>
+  <div class="data-rule max-w-7xl mx-auto"></div>
+</section>
+
+<footer class="border-t border-line">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 py-10 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between text-xs font-mono uppercase tracking-[0.16em] text-muted">
+    <div>CDEL · Curated Data for Efficient Learning · ECCV 2026</div>
+    <div class="flex gap-6">
+      <a href="https://openreview.net/group?id=thecvf.com/ECCV/2026/Workshop/CDEL" target="_blank" rel="noopener" class="hover:text-ink transition-colors">OpenReview</a>
+      <a href="iccv2025/" class="hover:text-ink transition-colors">Archive (ICCV 2025)</a>
+      <a href="mailto:gcaz@mit.edu" class="hover:text-ink transition-colors">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  toggle?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+
+  // Mobile menu
+  (function () {
+    const btn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (!btn || !menu) return;
+    const icons = {
+      open: btn.querySelector('[data-menu-icon="open"]'),
+      close: btn.querySelector('[data-menu-icon="close"]'),
+    };
+    function setOpen(open) {
+      menu.hidden = !open;
+      btn.setAttribute('aria-expanded', String(open));
+      btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      icons.open.hidden = open;
+      icons.close.hidden = !open;
+    }
+    btn.addEventListener('click', () => setOpen(menu.hidden));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+  })();
+
+  // Search + filter
+  (function () {
+    const cards = Array.from(document.querySelectorAll('.card'));
+    const q = document.getElementById('q');
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    const count = document.getElementById('count');
+    const empty = document.getElementById('empty');
+    let mode = 'all';
+
+    // Match the ASCII folding used when the page was generated,
+    // so "Niessner" finds "Nießner".
+    const fold = s => s.toLowerCase().replace(/ß/g, 'ss')
+      .normalize('NFKD').replace(/[\u0300-\u036f]/g, '');
+
+    function apply() {
+      const term = fold(q.value.trim());
+      let n = 0;
+      for (const c of cards) {
+        const okMode =
+          mode === 'all' ? true :
+          mode === 'oral' ? c.dataset.oral === '1' : true;
+        const okTerm = !term || c.dataset.s.includes(term);
+        const show = okMode && okTerm;
+        c.hidden = !show;
+        if (show) n++;
+      }
+      empty.hidden = n !== 0;
+      // a section heading is pointless when everything under it is filtered out
+      for (const g of document.querySelectorAll('.grp')) {
+        const shown = g.querySelectorAll('.card:not([hidden])').length;
+        g.hidden = shown === 0;
+      }
+      const label = mode === 'all' ? 'papers' : 'oral papers';
+      count.textContent = term || mode !== 'all'
+        ? `Showing ${n} ${label}` : `Showing all ${n} papers`;
+    }
+
+    q.addEventListener('input', apply);
+    chips.forEach(ch => ch.addEventListener('click', () => {
+      mode = ch.dataset.filter;
+      chips.forEach(c => c.setAttribute('aria-pressed', String(c === ch)));
+      apply();
+    }));
+  })();
+
+  // Copy BibTeX
+  document.querySelectorAll('.bib-btn').forEach(b => {
+    b.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(b.dataset.bib);
+        const old = b.textContent;
+        b.textContent = 'Copied ✓';
+        setTimeout(() => { b.textContent = old; }, 1600);
+      } catch (e) { /* clipboard unavailable */ }
+    });
+  });
+
+  // Reveal-on-scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
